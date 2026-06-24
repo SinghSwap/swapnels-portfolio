@@ -16,6 +16,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Accordion } from "@/components/ui/accordion";
 import { ButtonLink } from "@/components/ui/button";
 import { Footer } from "@/components/sections/footer";
+import { InstamartTeardown } from "@/components/case-studies/instamart-teardown";
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -57,6 +58,9 @@ export default async function CaseStudyPage({
   const { slug } = await params;
   const cs = caseStudies.find((c) => c.slug === slug);
   if (!cs) notFound();
+
+  // Bespoke, richly-structured detail page for the Instamart teardown.
+  if (slug === "instamart-variant-selection") return <InstamartTeardown />;
 
   return (
     <>

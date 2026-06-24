@@ -263,6 +263,62 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "instamart-variant-selection",
+    title: "Swiggy Instamart — Variant Selection Friction",
+    tag: "Product Teardown",
+    accent: "#fc8019",
+    summary:
+      "A growth-PM teardown of the grocery add-to-cart funnel, where a discount-optimized variant picker quietly leaks conversion, trust, and repeat demand.",
+    problem:
+      "Instamart's variant modal optimizes for discount/AOV signaling at the moment of purchase intent, suppressing add-to-cart conversion and eroding inventory trust on the highest-frequency staple category.",
+    user:
+      "A returning quick-commerce user restocking a staple (e.g. 'Aloo'), mid-way to a savings threshold.",
+    painPoints: [
+      "Tapping + opens a configurator instead of adding to cart.",
+      "The correctly-selected default renders last (alphabetical chips).",
+      "Default auto-selects the highest-discount pack even when it's sold out.",
+      "Sold-out state hides in a thumb-occluded bottom button while the tile looks available.",
+    ],
+    userJourney: [
+      "Search 'Aloo' → dense staple grid.",
+      "Tap + → variant modal opens (not a direct add).",
+      "Selected type sits rightmost → user doubts the selection.",
+      "Explore another chip → lands on a sold-out highest-discount pack.",
+      "Sold-out signal hidden under the thumb → confusion.",
+      "Backtrack to recover an addable state, then ADD — ~10 taps for one ₹29 staple.",
+    ],
+    insights: [
+      "A correct default that looks wrong is as costly as a wrong default.",
+      "Optimizing the default for discount is negative-EV when stock is ignored.",
+      "Inventory accuracy and inventory communication are different products.",
+      "This is the habit category — the blast radius is retention, not one cart.",
+    ],
+    opportunity:
+      "Re-point the variant picker from 'expose discounts' to 'complete the purchase' on the highest-frequency category — one of the cheaper high-leverage interventions in the grocery funnel.",
+    solution:
+      "Ship availability-first defaulting + an unmissable single-source-of-truth sold-out state as one release, with a near-zero-effort chip reorder riding along; gate everything on revenue-per-session, not AOV.",
+    wireframes:
+      "Selected chip leads, in-stock default, redundant sold-out signals on tile + inline + button.",
+    metrics: [
+      "Successful staple purchases per session (North Star)",
+      "Modal→ADD conversion / OOS-default rate",
+      "Chip-backtrack rate and time-to-cart",
+      "Revenue per session (with AOV as a guardrail)",
+    ],
+    tradeoffs: [
+      "Availability-first defaulting slightly lowers exposure of high-discount large packs — AOV is the standing guardrail.",
+      "RICE ranks the cheap chip reorder highest, but it protects no sellable GMV — ship it alongside the strategic bet, not instead of it.",
+      "The full one-tap-add restructure has the highest ceiling but 4× the effort and real AOV risk — sequenced as the next bet.",
+    ],
+    impact:
+      "Directionally ~₹2,000–3,200 of recoverable GMV at risk per 1,000 staple modal opens, before trust and retention effects — the feature built to raise basket value is shrinking it in the sold-out case.",
+    futureImprovements: [
+      "One-tap add with a smart in-stock default (run after the availability foundation).",
+      "Graceful OOS recovery: 'Notify me' + a live substitute rail.",
+      "Last-purchased default for returning users on habit SKUs.",
+    ],
+  },
+  {
     slug: "ai-job-search-engine",
     title: "AI Job Search Engine",
     tag: "Personal Product",
