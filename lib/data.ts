@@ -9,13 +9,13 @@ export const site = {
   headline: "I build products that solve real problems.",
   subheadline:
     "3+ years driving digital products at ICICI Bank and continuously building AI-powered tools, automations, and product experiments to improve everyday workflows.",
-  email: "swapnel1999@gmail.com",
+  email: "reachtoswapnelsingh@gmail.com",
   location: "India",
   resumeUrl: "/resume.pdf",
   links: {
-    linkedin: "https://www.linkedin.com/in/swapnel-singh",
+    linkedin: "https://www.linkedin.com/in/pm-swapnilsingh",
     github: "https://github.com/swapnelsingh",
-    email: "mailto:swapnel1999@gmail.com",
+    email: "mailto:reachtoswapnelsingh@gmail.com",
   },
   url: "https://swapnelsingh.com",
   philosophy: "Good products eliminate repetitive work and make decisions easier.",
@@ -226,44 +226,6 @@ export const productThinking: string[] = [
   "Feature Prioritization",
 ];
 
-export type Article = {
-  title: string;
-  blurb: string;
-  readTime: string;
-  tag: string;
-};
-
-export const articles: Article[] = [
-  {
-    title: "What Working at ICICI Bank Taught Me About Product Management",
-    blurb:
-      "Shipping inside a large, regulated organization is its own discipline — here's what it taught me about stakeholders, constraints, and momentum.",
-    readTime: "6 min read",
-    tag: "Career",
-  },
-  {
-    title: "Why Every PM Should Learn APIs",
-    blurb:
-      "You don't need to write production code, but understanding how systems talk changes the questions you ask and the scope you can imagine.",
-    readTime: "5 min read",
-    tag: "Craft",
-  },
-  {
-    title: "Automation Is a Superpower",
-    blurb:
-      "The highest-leverage skill for a modern PM isn't a framework — it's the instinct to automate the repetitive before it compounds.",
-    readTime: "4 min read",
-    tag: "Productivity",
-  },
-  {
-    title: "Building Products for Yourself Is Underrated",
-    blurb:
-      "Being your own user collapses the feedback loop to zero. Every project here started as a problem I personally had.",
-    readTime: "5 min read",
-    tag: "Building",
-  },
-];
-
 export type TimelineNode = {
   title: string;
   detail: string;
@@ -272,8 +234,6 @@ export type TimelineNode = {
 export const timeline: TimelineNode[] = [
   { title: "IIT Jammu", detail: "Engineering foundation — first-principles problem solving." },
   { title: "ICICI Bank", detail: "Manager, Product & Digital Transformation." },
-  { title: "Product Management Learning", detail: "1000+ hours of frameworks, metrics, and craft." },
-  { title: "Building AI Products", detail: "Shipping personal tools, automations, and experiments." },
   { title: "Transitioning into Startup PM Roles", detail: "Where building and shipping move fastest." },
 ];
 
@@ -470,6 +430,5 @@ export const navLinks = [
   { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#projects" },
   { label: "Case Studies", href: "/#case-studies" },
-  { label: "Writing", href: "/#writing" },
   { label: "Contact", href: "/#contact" },
 ];

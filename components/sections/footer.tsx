@@ -56,7 +56,6 @@ export function Footer() {
           <span>
             © {new Date().getFullYear()} {site.name}. Built with Next.js & Tailwind.
           </span>
-          <span>Designed & built end-to-end.</span>
         </div>
       </div>
     </footer>
