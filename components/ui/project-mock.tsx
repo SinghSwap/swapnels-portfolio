@@ -15,7 +15,8 @@ export function ProjectMock({
     | "automation"
     | "learning"
     | "research"
-    | "finance";
+    | "finance"
+    | "commerce";
   accent: string;
   className?: string;
 }) {
@@ -41,6 +42,7 @@ export function ProjectMock({
         {variant === "learning" && <LearningMock />}
         {variant === "research" && <ResearchMock />}
         {variant === "finance" && <FinanceMock />}
+        {variant === "commerce" && <CommerceMock />}
       </div>
     </div>
   );
@@ -54,6 +56,7 @@ function hostFor(v: string) {
       learning: "pm-revision.local / frameworks",
       research: "research / whatsapp-search.pdf",
       finance: "finance.app / insights",
+      commerce: "instamart / variant-picker",
     } as Record<string, string>
   )[v];
 }
@@ -223,6 +226,69 @@ function FinanceMock() {
             <div className="text-[10px] font-semibold text-muted-foreground">{t}</div>
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function CommerceMock() {
+  // a variant-picker: type chips (selected wrongly last) + pack tiles (one sold out)
+  return (
+    <div className="space-y-3">
+      {/* product header */}
+      <div className="flex items-center gap-3 rounded-lg border border-border bg-card p-2.5">
+        <div className="h-9 w-9 rounded-md bg-foreground/5" />
+        <div className="flex-1 space-y-1.5">
+          <div className={cn(bar, "h-2.5 w-1/2")} />
+          <div className={cn(bar, "h-2 w-1/4 opacity-60")} />
+        </div>
+      </div>
+      {/* variant type chips */}
+      <div className="flex flex-wrap gap-1.5">
+        {["Onion", "Tomato", "Potato"].map((t, i) => (
+          <span
+            key={t}
+            className="rounded-full border px-2.5 py-1 text-[9px] font-medium"
+            style={
+              i === 2
+                ? { borderColor: "var(--mock)", color: "var(--mock)", background: "color-mix(in srgb, var(--mock) 10%, transparent)" }
+                : { borderColor: "var(--border, #e5e7eb)", color: "inherit" }
+            }
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+      {/* pack tiles */}
+      <div className="grid grid-cols-3 gap-2">
+        {[
+          { w: "1 kg", sold: false },
+          { w: "2 kg", sold: true },
+          { w: "5 kg", sold: false },
+        ].map((p, i) => (
+          <div
+            key={i}
+            className="relative rounded-lg border bg-card p-2.5"
+            style={{
+              borderColor: i === 1 ? "var(--mock)" : "var(--border, #e5e7eb)",
+            }}
+          >
+            <div className={cn(bar, "h-2 w-2/3")} />
+            <div className={cn(bar, "mt-1.5 h-2 w-1/2 opacity-60")} />
+            {p.sold && (
+              <span className="mt-1.5 inline-block rounded bg-foreground/10 px-1 py-0.5 text-[8px] font-semibold text-muted">
+                Sold out
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+      {/* add button */}
+      <div
+        className="flex h-7 items-center justify-center rounded-md text-[10px] font-semibold text-white"
+        style={{ background: "var(--mock)" }}
+      >
+        ADD
       </div>
     </div>
   );

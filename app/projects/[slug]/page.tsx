@@ -20,8 +20,9 @@ import { Footer } from "@/components/sections/footer";
 
 const mockBySlug: Record<
   string,
-  "job-search" | "automation" | "learning" | "research" | "finance"
+  "job-search" | "automation" | "learning" | "research" | "finance" | "commerce"
 > = {
+  "instamart-variant-selection": "commerce",
   "ai-job-search-engine": "job-search",
   "meal-planning-automation": "automation",
   "pm-revision": "learning",

@@ -48,9 +48,11 @@ export function Contact() {
                     rel={c.external ? "noopener noreferrer" : undefined}
                     className="group flex flex-col items-center gap-2 rounded-2xl border border-border bg-background-subtle p-5 transition-all hover:-translate-y-1 hover:border-accent/40"
                   >
-                    <c.icon className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-accent" />
+                    <c.icon className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-accent" />
                     <span className="text-sm font-medium">{c.label}</span>
-                    <span className="text-xs text-muted">{c.value}</span>
+                    <span className="w-full break-words text-center text-xs text-muted">
+                      {c.value}
+                    </span>
                   </a>
                 ))}
               </div>

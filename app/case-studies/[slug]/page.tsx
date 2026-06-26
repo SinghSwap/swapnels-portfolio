@@ -17,6 +17,7 @@ import { Accordion } from "@/components/ui/accordion";
 import { ButtonLink } from "@/components/ui/button";
 import { Footer } from "@/components/sections/footer";
 import { InstamartTeardown } from "@/components/case-studies/instamart-teardown";
+import { SundayBasket } from "@/components/case-studies/sunday-basket";
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -59,8 +60,9 @@ export default async function CaseStudyPage({
   const cs = caseStudies.find((c) => c.slug === slug);
   if (!cs) notFound();
 
-  // Bespoke, richly-structured detail page for the Instamart teardown.
+  // Bespoke, richly-structured detail pages.
   if (slug === "instamart-variant-selection") return <InstamartTeardown />;
+  if (slug === "sunday-basket") return <SundayBasket />;
 
   return (
     <>

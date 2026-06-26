@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, Download, User } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { LinkedinIcon } from "@/components/ui/brand-icons";
-import { site, stats } from "@/lib/data";
+import { site } from "@/lib/data";
 import { ButtonLink } from "@/components/ui/button";
-import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 const fade = {
   hidden: { opacity: 0, y: 24 },
@@ -26,10 +26,16 @@ export function Hero() {
       <div className="relative mx-auto max-w-5xl px-6">
         <motion.div initial="hidden" animate="visible" className="flex flex-col items-center text-center">
           <motion.div custom={0} variants={fade} className="mb-8">
-            <div className="relative grid h-24 w-24 place-items-center overflow-hidden rounded-full border border-border bg-card shadow-sm">
-              {/* profile picture placeholder — drop /profile.jpg in public to replace */}
-              <User className="h-10 w-10 text-muted" />
-              <span className="absolute bottom-1 right-1 h-4 w-4 rounded-full border-2 border-card bg-green-500" />
+            <div className="relative h-24 w-24 overflow-hidden rounded-full border border-border bg-card shadow-sm">
+              <Image
+                src="/profile.jpg"
+                alt={site.name}
+                width={192}
+                height={192}
+                priority
+                className="h-24 w-24 object-cover"
+              />
+              <span className="absolute bottom-1 right-1 z-10 h-4 w-4 rounded-full border-2 border-card bg-green-500" />
             </div>
           </motion.div>
 
@@ -75,21 +81,6 @@ export function Hero() {
               <LinkedinIcon className="h-4 w-4" /> LinkedIn
             </ButtonLink>
           </motion.div>
-
-          <motion.dl
-            custom={5}
-            variants={fade}
-            className="mt-16 grid w-full max-w-2xl grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3"
-          >
-            {stats.map((s) => (
-              <div key={s.label} className="bg-card px-6 py-7 text-center">
-                <dt className="text-4xl font-semibold tracking-tight text-foreground">
-                  <AnimatedCounter value={s.value} suffix={s.suffix} />
-                </dt>
-                <dd className="mt-2 text-sm text-muted-foreground">{s.label}</dd>
-              </div>
-            ))}
-          </motion.dl>
         </motion.div>
       </div>
     </section>

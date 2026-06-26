@@ -28,35 +28,152 @@ export const stats = [
 ];
 
 export const about = {
-  paragraphs: [
-    "I currently work at ICICI Bank where I drive product delivery for iUniverse — the bank's recruitment and onboarding platform. I own enhancements end-to-end, working across HR, engineering, QA, UX, and business teams to ship improvements that move real metrics.",
-    "Beyond my day job, I enjoy finding friction in everyday workflows and building solutions with AI, APIs, automation tools, and no-code systems. Most of the projects below started as a personal annoyance and turned into a shipped product.",
+  subtitle:
+    "Building enterprise products today, preparing to build customer-first products tomorrow.",
+  intro:
+    "I'm a product builder who came up through enterprise. Over 3+ years at ICICI Bank, I've owned HR-technology platforms used by thousands of employees — and while my title read Manager, the work was squarely Product Management: discovery, stakeholder alignment, prioritization, roadmap execution, and untangling messy user journeys. Now I'm making it official — moving into a dedicated Product Manager role where I can build customer-first products with real, measurable impact.",
+  quickFacts: [
+    { icon: "experience", label: "Experience", value: "3+ Years" },
+    { icon: "company", label: "Company", value: "ICICI Bank" },
+    { icon: "education", label: "Education", value: "B.Tech — IIT Jammu" },
+    { icon: "goal", label: "Career Goal", value: "Product Manager" },
+    { icon: "location", label: "Location", value: "India" },
+    {
+      icon: "interests",
+      label: "Interests",
+      value: "AI · Consumer · Product Strategy",
+    },
   ],
+  principles: [
+    {
+      icon: "problem",
+      title: "Start with the Problem",
+      desc: "Understand the user's pain before proposing a solution.",
+    },
+    {
+      icon: "purpose",
+      title: "Build with Purpose",
+      desc: "Every feature should solve a measurable problem.",
+    },
+    {
+      icon: "systems",
+      title: "Think in Systems",
+      desc: "Balance user needs, business goals, and constraints.",
+    },
+    {
+      icon: "iterate",
+      title: "Learn Through Iteration",
+      desc: "Ship, measure, and improve — relentlessly.",
+    },
+  ],
+  currentFocus:
+    "Right now I'm sharpening the craft from both sides — owning enterprise products at scale, shipping my own side projects, running user research, and working through structured PM learning — all pointed at stepping into a customer-facing Product Manager role.",
 };
 
-export type Experience = {
-  company: string;
-  role: string;
-  period: string;
-  summary: string;
-  highlights: string[];
+// -----------------------------------------------------------------------------
+// Professional journey — a four-year progression at ICICI Bank, rendered as an
+// interactive vertical timeline. The first entry (current) is highlighted.
+// -----------------------------------------------------------------------------
+
+export type JourneyEntry = {
+  year: string;
+  title: string;
+  icon: "platform" | "scale" | "launch" | "transform";
+  current?: boolean;
+  scope?: string;
+  scale?: string;
+  paragraphs: string[];
+  /** Prominent stat/metric cards (used by the highlighted current role). */
+  metrics?: { label: string; sub: string }[];
+  /** Secondary detail chips (outcomes or areas of ownership). */
+  detailsLabel?: string;
+  details?: string[];
+  /** One-line takeaway shown as a highlight strip. */
+  highlight: string;
 };
 
-export const experience: Experience[] = [
+export const journey: JourneyEntry[] = [
   {
-    company: "ICICI Bank",
-    role: "Manager – Product & Digital Transformation",
-    period: "2022 – Present",
-    summary:
-      "Driving product delivery for iUniverse, the bank's recruitment and onboarding platform.",
-    highlights: [
-      "Owned end-to-end delivery of enhancements for iUniverse.",
-      "Collaborated across HR, engineering, QA, UX, and business teams.",
-      "Reduced onboarding turnaround time by 30%.",
-      "Reduced support queries by 25%.",
-      "Managed API integrations and redesigned user journeys.",
-      "Built dashboards and analytics for core business metrics.",
+    year: "2026",
+    title: "Product Owner — UOTM (Unified One Touch Mobile)",
+    icon: "platform",
+    current: true,
+    scope: "Enterprise-wide employee platform",
+    scale: "~150,000 employees daily",
+    paragraphs: [
+      "I own one of ICICI Bank's flagship employee platforms — the primary digital workplace employees live in after they join.",
+      "It's the single destination for everyday work: attendance, leave, salary, internal job opportunities, referrals, HR support, and manager approvals. I own it end-to-end — from requirement discovery and roadmap to prioritization, delivery, releases, and post-launch support.",
     ],
+    metrics: [
+      { label: "Enterprise platform", sub: "The bank's digital workplace" },
+      { label: "~150K", sub: "Daily active employees" },
+      { label: "End-to-end", sub: "Full product ownership" },
+      { label: "Cross-functional", sub: "Stakeholders across the org" },
+    ],
+    highlight:
+      "Owning the platform 150K employees touch every day — the widest scope of my career so far.",
+  },
+  {
+    year: "2025",
+    title: "Product Owner — iUniverse",
+    icon: "scale",
+    scope: "Applicant onboarding platform",
+    scale: "Scaling a live product",
+    paragraphs: [
+      "Led the production launch and continuous evolution of iUniverse, ICICI Bank's applicant onboarding platform.",
+      "Owned roadmap execution and journey optimization with HR, Operations, and Engineering — reducing onboarding friction while improving efficiency for internal teams.",
+    ],
+    detailsLabel: "Outcomes",
+    details: [
+      "~30% faster onboarding turnaround",
+      "~25% fewer support queries",
+      "Multiple production releases shipped",
+    ],
+    highlight: "Turned a fresh launch into a continuously improving product.",
+  },
+  {
+    year: "2024",
+    title: "Product Owner — iUniverse (0 → 1 Build)",
+    icon: "launch",
+    scope: "Greenfield product build",
+    scale: "Up to 80,000 applicants / month",
+    paragraphs: [
+      "Owned end-to-end delivery of iUniverse from early development to production readiness — digitizing the applicant onboarding journey before candidates became employees.",
+      "Worked closely with HR, Operations, and Engineering to define requirements, prioritize features, validate workflows, coordinate testing, and manage releases.",
+    ],
+    detailsLabel: "Ownership",
+    details: [
+      "Requirement gathering",
+      "Journey mapping",
+      "Feature prioritization",
+      "API integration",
+      "UAT",
+      "Release management",
+    ],
+    highlight:
+      "Shipped a greenfield onboarding platform supporting high-volume recruitment.",
+  },
+  {
+    year: "2023",
+    title: "Product Owner — Employee Verification Transformation",
+    icon: "transform",
+    scope: "Enterprise workflow redesign",
+    scale: "Bank-wide hiring governance",
+    paragraphs: [
+      "Led a business-critical initiative to redesign the employee background-verification workflow.",
+      "Verification used to start only after someone became an employee — so adverse reports could arrive months post-onboarding. I shifted the journey from Employee ID to Applicant ID so verification begins before employee creation, cutting operational risk and improving hiring governance.",
+    ],
+    detailsLabel: "Ownership",
+    details: [
+      "Requirement discovery",
+      "Process redesign",
+      "Stakeholder alignment",
+      "Product ownership",
+      "UAT",
+      "Production deployment",
+    ],
+    highlight:
+      "Solved a business-critical problem by redesigning the workflow — not just digitizing it.",
   },
 ];
 
@@ -75,9 +192,37 @@ export type Project = {
   lesson: string;
   accent: string; // hex used in the generated screenshot mock
   links?: { label: string; href: string }[];
+  caseStudySlug?: string; // if set, the card links to this rich case study instead
 };
 
 export const projects: Project[] = [
+  {
+    slug: "instamart-variant-selection",
+    title: "Swiggy Instamart — Variant Selection Friction",
+    tag: "Product Teardown",
+    oneLiner:
+      "A growth-PM teardown of the grocery add-to-cart funnel, where a discount-optimized variant picker quietly leaks conversion, trust, and repeat demand.",
+    problem:
+      "Instamart's variant modal optimizes for discount/AOV signaling at the moment of purchase intent — auto-selecting sold-out packs and hiding the sold-out state — which suppresses add-to-cart conversion on the highest-frequency staple category.",
+    whyItMattered:
+      "Staple searches (\"aloo\", \"doodh\") are the weekly habit loop that drives q-commerce frequency. Friction there doesn't cost one line item — it taxes the behavior the entire business model depends on.",
+    solution:
+      "Re-point the variant picker from 'expose discounts' to 'complete the purchase': availability-first defaulting + an unmissable single-source-of-truth sold-out state, with a chip reorder riding along — all gated on revenue-per-session, not AOV.",
+    role:
+      "Independent product teardown: observation, root-cause analysis, RICE prioritization, solution design, and an experimentation plan.",
+    features: [
+      "Funnel + root-cause analysis from a recorded session",
+      "RICE prioritization across five interventions",
+      "Six-test experimentation plan with guardrails",
+      "North Star + leading/lagging metric design",
+    ],
+    tools: ["Growth PM", "Funnel Analysis", "RICE", "Experimentation"],
+    impact:
+      "Directionally ~₹2,000–3,200 of recoverable GMV at risk per 1,000 staple modal opens, before trust and retention effects.",
+    lesson: "Optimize for the purchase you can complete, not the discount you can show.",
+    accent: "#fc8019",
+    caseStudySlug: "instamart-variant-selection",
+  },
   {
     slug: "ai-job-search-engine",
     title: "AI-Powered Job Search Engine",
@@ -104,32 +249,35 @@ export const projects: Project[] = [
       "Reduced manual job-search effort from hours to minutes, surfacing only roles that actually fit.",
     lesson: "Automation compounds productivity.",
     accent: "#2563eb",
+    caseStudySlug: "ai-job-search-engine",
   },
   {
     slug: "meal-planning-automation",
-    title: "Weekly Meal Planning & Grocery Automation",
-    tag: "Automation",
+    title: "Sunday Basket",
+    tag: "Personal Product",
     oneLiner:
-      "An automated workflow that generates weekly menus and grocery lists and emails them on schedule.",
+      "An AI-powered weekly meal-planning assistant that cuts grocery costs and removes the mental effort of deciding what to cook.",
     problem:
-      "Weekly meal planning and grocery tracking consumed unnecessary mental energy — a recurring tax on the week.",
+      "The real cost of weekly groceries wasn't the shopping — it was the ~1 hour of planning beforehand. I kept postponing it, then defaulted to multiple costly mid-week orders, impulse buys, and wasted ingredients.",
     whyItMattered:
-      "Small repetitive decisions accumulate into real cognitive load. Removing them frees attention for things that actually matter.",
+      "Ordering groceries once a week is meaningfully cheaper, but only if the planning actually happens. The planning overhead was the single point of failure between me and consistent, cheaper bulk shopping.",
     solution:
-      "Built an automated workflow that generates weekly menus and procurement lists, then emails them automatically every week — no manual trigger required.",
+      "Built a Sunday-morning automation that generates a 7-day breakfast/lunch/dinner plan optimized for ingredient reuse, consolidates it into one categorized grocery list, and emails it to me before I shop — in under five minutes of my time.",
     role:
-      "Designed the automation end-to-end: the prompt logic, the schedule, and the delivery pipeline.",
+      "Sole product manager and builder: framed the problem, set the hypothesis, scoped the MVP, designed the prompt and workflow, and shipped it for myself.",
     features: [
-      "AI-generated weekly menus",
-      "Auto-compiled grocery procurement lists",
-      "Scheduled email delivery",
-      "Zero manual upkeep once configured",
+      "Auto-generated 7-day meal plan (breakfast, lunch, dinner)",
+      "Ingredient-reuse optimization across meals to cut waste",
+      "One consolidated, de-duplicated grocery list",
+      "Groceries grouped into shopping categories with rough quantities",
+      "Emailed automatically every Sunday before I shop",
     ],
-    tools: ["Make.com", "OpenAI", "Email Automation"],
+    tools: ["Make.com", "AI / LLM", "Email Automation", "Scheduling"],
     impact:
-      "Eliminated weekly planning effort and improved household decision-making.",
+      "Cut weekly planning from ~1 hour to under 5 minutes, making once-a-week bulk shopping the easy default — fewer mid-week orders, less impulse spend, less waste.",
     lesson: "Small repetitive problems deserve product thinking too.",
     accent: "#16a34a",
+    caseStudySlug: "sunday-basket",
   },
   {
     slug: "pm-revision",
@@ -182,6 +330,7 @@ export const projects: Project[] = [
       "Produced PRDs, wireframes, hypotheses, and success metrics for a context-aware search feature.",
     lesson: "Great products start with understanding users.",
     accent: "#0891b2",
+    caseStudySlug: "whatsapp-business-search",
   },
   {
     slug: "personal-finance-ai",
@@ -426,16 +575,16 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    slug: "grocery-automation",
-    title: "Grocery Automation System",
-    tag: "Automation",
+    slug: "sunday-basket",
+    title: "Sunday Basket",
+    tag: "Personal Product",
     accent: "#16a34a",
     summary:
-      "A zero-touch weekly system that plans meals and compiles the grocery list for you.",
+      "An AI-powered weekly meal-planning assistant I built to cut my grocery costs and eliminate the mental effort of deciding what to cook.",
     problem:
-      "Planning the week's meals and the matching grocery list is a small but relentless recurring chore that drains decision energy.",
+      "The real cost of weekly groceries wasn't the shopping — it was the ~1 hour of planning beforehand that I kept postponing, which pushed me into costly mid-week orders, impulse buys, and wasted ingredients.",
     user:
-      "Busy households that want to eat well without re-deciding the same thing every week.",
+      "Me, first — a working professional who wanted the savings of once-a-week bulk shopping without the weekly planning tax.",
     painPoints: [
       "Deciding 'what's for dinner' over and over.",
       "Forgetting items, then making extra store trips.",
@@ -485,6 +634,5 @@ export const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#projects" },
-  { label: "Case Studies", href: "/#case-studies" },
   { label: "Contact", href: "/#contact" },
 ];
