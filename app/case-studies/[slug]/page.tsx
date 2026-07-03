@@ -18,6 +18,8 @@ import { ButtonLink } from "@/components/ui/button";
 import { Footer } from "@/components/sections/footer";
 import { InstamartTeardown } from "@/components/case-studies/instamart-teardown";
 import { SundayBasket } from "@/components/case-studies/sunday-basket";
+import { WhatsappSearch } from "@/components/case-studies/whatsapp-search";
+import { VoiceAdoption } from "@/components/case-studies/voice-adoption";
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -63,6 +65,8 @@ export default async function CaseStudyPage({
   // Bespoke, richly-structured detail pages.
   if (slug === "instamart-variant-selection") return <InstamartTeardown />;
   if (slug === "sunday-basket") return <SundayBasket />;
+  if (slug === "whatsapp-business-search") return <WhatsappSearch />;
+  if (slug === "chatgpt-voice-adoption") return <VoiceAdoption />;
 
   return (
     <>

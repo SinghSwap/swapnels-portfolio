@@ -36,7 +36,11 @@ export const about = {
     { icon: "experience", label: "Experience", value: "3+ Years" },
     { icon: "company", label: "Company", value: "ICICI Bank" },
     { icon: "education", label: "Education", value: "B.Tech — IIT Jammu" },
-    { icon: "goal", label: "Career Goal", value: "Product Manager" },
+    {
+      icon: "certification",
+      label: "Certification",
+      value: "NextLeap PM Fellowship",
+    },
     { icon: "location", label: "Location", value: "India" },
     {
       icon: "interests",
@@ -95,7 +99,7 @@ export type JourneyEntry = {
 export const journey: JourneyEntry[] = [
   {
     year: "2026",
-    title: "Product Owner — UOTM (Unified One Touch Mobile)",
+    title: "Product Owner — UOTM",
     icon: "platform",
     current: true,
     scope: "Enterprise-wide employee platform",
@@ -121,15 +125,17 @@ export const journey: JourneyEntry[] = [
     scale: "Scaling a live product",
     paragraphs: [
       "Led the production launch and continuous evolution of iUniverse, ICICI Bank's applicant onboarding platform.",
-      "Owned roadmap execution and journey optimization with HR, Operations, and Engineering — reducing onboarding friction while improving efficiency for internal teams.",
+      "Anchored the roadmap on a single North Star — Day-1 Readiness Rate (candidates fully ready on day one ÷ offers accepted) — with a leading-metric tree (document-upload completion, first-time approval, background-verification SLA) to catch funnel drop-off before it ever reached onboarding.",
     ],
     detailsLabel: "Outcomes",
     details: [
       "~30% faster onboarding turnaround",
       "~25% fewer support queries",
+      "Day-1 Readiness as the North Star metric",
       "Multiple production releases shipped",
     ],
-    highlight: "Turned a fresh launch into a continuously improving product.",
+    highlight:
+      "Turned a fresh launch into a metric-driven, continuously improving product.",
   },
   {
     year: "2024",
@@ -138,20 +144,20 @@ export const journey: JourneyEntry[] = [
     scope: "Greenfield product build",
     scale: "Up to 80,000 applicants / month",
     paragraphs: [
-      "Owned end-to-end delivery of iUniverse from early development to production readiness — digitizing the applicant onboarding journey before candidates became employees.",
-      "Worked closely with HR, Operations, and Engineering to define requirements, prioritize features, validate workflows, coordinate testing, and manage releases.",
+      "Owned end-to-end delivery of iUniverse from early development to production readiness — digitizing the entire pre-joining journey so a candidate is fully ready before day one.",
+      "Mapped and built the onboarding funnel: offer → document upload → verification → background check → Active Directory credential creation → password setup → Day-1 ready. Worked closely with HR, Operations, and Engineering to define requirements, prioritize, validate workflows, and manage releases.",
     ],
     detailsLabel: "Ownership",
     details: [
+      "Funnel & journey mapping",
       "Requirement gathering",
-      "Journey mapping",
       "Feature prioritization",
       "API integration",
       "UAT",
       "Release management",
     ],
     highlight:
-      "Shipped a greenfield onboarding platform supporting high-volume recruitment.",
+      "Shipped a greenfield onboarding platform that gets candidates Day-1 ready at high volume.",
   },
   {
     year: "2023",
@@ -329,7 +335,7 @@ export const projects: Project[] = [
     impact:
       "Produced PRDs, wireframes, hypotheses, and success metrics for a context-aware search feature.",
     lesson: "Great products start with understanding users.",
-    accent: "#0891b2",
+    accent: "#128c7e",
     caseStudySlug: "whatsapp-business-search",
   },
   {
@@ -356,6 +362,34 @@ export const projects: Project[] = [
     impact: "A focused tool that turns raw spending into financial awareness.",
     lesson: "AI should simplify financial awareness.",
     accent: "#ea580c",
+  },
+  {
+    slug: "chatgpt-voice-adoption",
+    title: "Voice Input Adoption on ChatGPT",
+    tag: "Product Case Study",
+    oneLiner:
+      "A 0→1 case study on getting India's typing-first users to actually use voice — landing on an on-device Privacy Mode.",
+    problem:
+      "India is ChatGPT's largest, most vernacular market, yet urban professionals default to typing — held back by privacy fears, transcription errors, social discomfort, and an awareness gap.",
+    whyItMattered:
+      "Voice is 3–4× faster and fits a multilingual, multitasking audience. Whoever earns the voice habit owns the next phase of AI assistants in India.",
+    solution:
+      "Scoped to the highest-leverage barrier — privacy — and proposed an on-device Privacy Mode (no training, no memories, user-controlled), surfaced from the home screen to also close the awareness gap.",
+    role:
+      "End-to-end PM case study: market analysis, segmentation & TAM, problem framing & solution, and system design & metrics.",
+    features: [
+      "Market & opportunity analysis (India voice landscape)",
+      "Competitive UX teardown (ChatGPT vs Alexa vs Assistant)",
+      "TAM funnel + a 75-user research study",
+      "Privacy Mode solution, wireframes & system design",
+      "North Star + KPI metric framework",
+    ],
+    tools: ["Product Strategy", "User Research", "0→1", "Wireframing"],
+    impact:
+      "A privacy-first, shippable path to move India's typing-first users to voice — with a clear metric model to prove it.",
+    lesson: "Remove the fear behind the mic, and voice becomes the default input.",
+    accent: "#6366f1",
+    caseStudySlug: "chatgpt-voice-adoption",
   },
 ];
 
@@ -411,6 +445,58 @@ export type CaseStudy = {
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: "chatgpt-voice-adoption",
+    title: "Getting India to Talk to ChatGPT",
+    tag: "Product Case Study",
+    accent: "#6366f1",
+    summary:
+      "A case study on increasing voice-input adoption on ChatGPT in India — landing on an on-device Privacy Mode.",
+    problem:
+      "Urban professionals (25–34) use ChatGPT often but prefer typing over voice — held back by privacy concerns, transcription errors, social discomfort, and an awareness gap.",
+    user:
+      "Urban, prime-working-age professionals (25–54) in India who use ChatGPT for work and speak Hindi/regional languages.",
+    painPoints: [
+      "Fear that voice data is stored or used for training.",
+      "Transcription errors concentrated among regional/accented speakers.",
+      "Social discomfort speaking to AI in public.",
+      "Many don't know voice input exists or that it's multilingual.",
+    ],
+    userJourney: [
+      "Opens ChatGPT for a work task.",
+      "Sees a mic, but defaults to typing out of habit and distrust.",
+      "Typing in a regional language is slow.",
+      "Voice stays unused despite being 3–4× faster.",
+    ],
+    insights: [
+      "ChatGPT's voice is more capable than rivals — but doesn't feel voice-first.",
+      "Privacy is the highest-leverage barrier to remove first.",
+      "Awareness and discoverability matter as much as capability.",
+    ],
+    opportunity:
+      "India is ChatGPT's largest market and overwhelmingly vernacular; voice is the natural input, but trust must come first.",
+    solution:
+      "A dedicated Privacy Mode with on-device speech-to-text — no training, no memories, user-controlled — surfaced from the home screen to also close the awareness gap.",
+    wireframes:
+      "Home screen with voice surfaced; a Privacy Mode intro card; a system diagram routing audio on-device vs cloud.",
+    metrics: [
+      "% sessions with voice input (North Star)",
+      "% Privacy Mode transcriptions",
+      "Voice error rate and accuracy",
+      "Fallback coverage on unsupported devices",
+    ],
+    tradeoffs: [
+      "On-device STT trades some accuracy/quality for privacy — cloud fallback covers gaps.",
+      "Scoped out accuracy, hands-free, and onboarding to focus on the privacy barrier.",
+    ],
+    impact:
+      "A privacy-first path to shifting India's typing-first users to voice — the input that fits a vernacular, multitasking audience.",
+    futureImprovements: [
+      "Hinglish / code-switching accuracy.",
+      "Hands-free and activation-phrase modes.",
+      "A full user-facing voice-data control panel.",
+    ],
+  },
   {
     slug: "instamart-variant-selection",
     title: "Swiggy Instamart — Variant Selection Friction",
@@ -524,7 +610,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "whatsapp-business-search",
     title: "WhatsApp Business Search",
     tag: "Product Research",
-    accent: "#0891b2",
+    accent: "#128c7e",
     summary:
       "Discovery and a product proposal for retrieving information buried inside business chats.",
     problem:

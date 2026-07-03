@@ -1,4 +1,5 @@
 import {
+  Award,
   Boxes,
   Briefcase,
   Compass,
@@ -9,7 +10,6 @@ import {
   RefreshCw,
   Search,
   Sparkles,
-  Target,
 } from "lucide-react";
 import { about } from "@/lib/data";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
@@ -18,7 +18,7 @@ const factIcons = {
   experience: Briefcase,
   company: Landmark,
   education: GraduationCap,
-  goal: Target,
+  certification: Award,
   location: MapPin,
   interests: Sparkles,
 } as const;

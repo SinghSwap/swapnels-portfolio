@@ -26,7 +26,7 @@ vague, or exaggerated. Suggest concrete edits.
 ## Professional Journey (ICICI Bank, 2023–2026)
 Framing: one bank, four years, expanding scope, ownership, and scale every year.
 
-### 2026 — Product Owner, UOTM (Unified One Touch Mobile)  *(current)*
+### 2026 — Product Owner, UOTM  *(current)*
 - Scope: Enterprise-wide employee platform · Scale: ~150,000 employees daily
 - Own one of ICICI Bank's flagship employee platforms — the primary digital workplace after joining: attendance, leave, salary, internal jobs, referrals, HR support, manager approvals.
 - End-to-end ownership: requirements, roadmap, prioritization, delivery, releases, post-launch support.

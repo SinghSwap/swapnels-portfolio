@@ -20,7 +20,13 @@ import { Footer } from "@/components/sections/footer";
 
 const mockBySlug: Record<
   string,
-  "job-search" | "automation" | "learning" | "research" | "finance" | "commerce"
+  | "job-search"
+  | "automation"
+  | "learning"
+  | "research"
+  | "finance"
+  | "commerce"
+  | "voice"
 > = {
   "instamart-variant-selection": "commerce",
   "ai-job-search-engine": "job-search",
@@ -28,6 +34,7 @@ const mockBySlug: Record<
   "pm-revision": "learning",
   "whatsapp-business-search": "research",
   "personal-finance-ai": "finance",
+  "chatgpt-voice-adoption": "voice",
 };
 
 export function generateStaticParams() {

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  :root { --accent:#2563eb; --ink:#111418; --muted:#5b6470; --line:#e4e7ec; }
+  * { box-sizing: border-box; }
+  @page { size: A4; margin: 16mm 17mm; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    font-size: 11.9px;
+    line-height: 1.5;
+  }
+  a { color: var(--accent); text-decoration: none; }
+
+  /* header */
+  .name { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+  .role { margin-top: 3px; font-size: 12.6px; font-weight: 600; color: var(--accent); letter-spacing: .2px; }
+  .contact { margin-top: 7px; font-size: 10.8px; color: var(--muted); }
+  .contact span { white-space: nowrap; }
+  .dot { color: #c4c9d2; margin: 0 7px; }
+
+  .summary { margin-top: 12px; color: #2b3138; }
+
+  .highlights {
+    display: flex; margin-top: 14px;
+    border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line);
+  }
+  .highlights > div { flex: 1; padding: 9px 4px; text-align: center; }
+  .highlights > div + div { border-left: 1px solid var(--line); }
+  .highlights .num { font-size: 17px; font-weight: 700; color: var(--accent); letter-spacing: -0.3px; }
+  .highlights .cap { font-size: 9.6px; color: var(--muted); margin-top: 1px; }
+
+  /* sections */
+  section { margin-top: 20px; }
+  h2 {
+    font-size: 11.3px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.4px;
+    color: var(--accent); margin: 0 0 9px; padding-bottom: 4px; border-bottom: 1.5px solid var(--line);
+  }
+
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-weight: 700; font-size: 13.4px; }
+  .job-org { font-weight: 600; color: #2b3138; }
+  .job-meta { font-size: 10.6px; color: var(--muted); white-space: nowrap; }
+  .job-sub { font-size: 10.8px; color: var(--muted); margin-top: 2px; }
+
+  ul { margin: 8px 0 0; padding-left: 0; list-style: none; }
+  li { position: relative; padding-left: 15px; margin-bottom: 6.5px; }
+  li::before { content: ""; position: absolute; left: 2px; top: 7px; width: 3.5px; height: 3.5px; border-radius: 50%; background: var(--accent); }
+  b { font-weight: 700; }
+
+  .proj { margin-bottom: 6.5px; padding-left: 15px; position: relative; }
+  .proj::before { content: ""; position: absolute; left: 2px; top: 7px; width: 3.5px; height: 3.5px; border-radius: 50%; background: var(--accent); }
+  .proj .pname { font-weight: 700; }
+  .tag { color: var(--muted); font-weight: 600; }
+
+  .skills-row { margin-bottom: 6px; }
+  .skills-row .lbl { font-weight: 700; color: #2b3138; }
+
+  .two { display: flex; gap: 30px; }
+  .two > div { flex: 1; }
+  .edu-item { margin-bottom: 3px; }
+  .edu-item .t { font-weight: 700; }
+  .edu-item .s { color: var(--muted); font-size: 10.8px; }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="name">Swapnel Singh</div>
+    <div class="role">Product Manager &nbsp;·&nbsp; Product Builder</div>
+    <div class="contact">
+      <span>reachtoswapnelsingh@gmail.com</span><span class="dot">·</span>
+      <span>India</span><span class="dot">·</span>
+      <span>linkedin.com/in/pm-swapnilsingh</span><span class="dot">·</span>
+      <span>github.com/swapnelsingh</span>
+    </div>
+    <p class="summary">
+      Product manager with 3+ years owning enterprise HR-technology platforms at ICICI Bank —
+      currently product owner of a workplace app used by <b>~150,000 employees daily</b>. Ships
+      end-to-end across discovery, metrics, prioritization, and delivery, and backs it with a
+      portfolio of self-built AI products and 0&#8594;1 product case studies.
+    </p>
+    <div class="highlights">
+      <div><div class="num">~150K</div><div class="cap">daily users on UOTM</div></div>
+      <div><div class="num">0&#8594;1</div><div class="cap">iUniverse to 80K applicants/mo</div></div>
+      <div><div class="num">~30%</div><div class="cap">faster onboarding turnaround</div></div>
+      <div><div class="num">3+ yrs</div><div class="cap">product ownership at ICICI</div></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="job-head">
+      <div class="job-title">Product Owner &nbsp;<span class="job-org">— ICICI Bank</span></div>
+      <div class="job-meta">2022 &ndash; Present</div>
+    </div>
+    <div class="job-sub">Manager, Product &amp; Digital Transformation &nbsp;·&nbsp; enterprise HR &amp; onboarding platforms</div>
+    <ul>
+      <li>Own <b>UOTM</b>, ICICI Bank&rsquo;s enterprise employee platform used by <b>~150,000 employees daily</b> (attendance, leave, payroll, internal mobility, referrals, approvals); lead product delivery end-to-end from discovery and roadmap to release and post-launch support.</li>
+      <li>Took <b>iUniverse</b>, the applicant-onboarding platform, from <b>0&#8594;1 to scale</b> (up to <b>80,000 applicants/month</b>), digitizing the full pre-joining funnel — document upload, verification, background checks, credential creation, and Day-1 readiness.</li>
+      <li>Defined <b>Day-1 Readiness Rate</b> as the product North Star and a leading-metric tree to catch funnel drop-off early; cut onboarding turnaround <b>~30%</b> and support queries <b>~25%</b> with HR, Operations, and Engineering.</li>
+      <li>Redesigned the employee background-verification workflow (<b>Employee ID &#8594; Applicant ID</b>) so checks begin <b>before</b> employee creation — reducing operational risk and improving hiring governance.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Selected Projects &amp; Case Studies</h2>
+    <div class="proj"><span class="pname">Sunday Basket</span> <span class="tag">— personal product.</span> AI weekly meal-planning automation (Make.com + LLM) that cut planning from <b>~1 hour to under 5 minutes</b> a week.</div>
+    <div class="proj"><span class="pname">AI-Powered Job Search Engine</span> <span class="tag">— personal product.</span> Python engine integrating Greenhouse, Lever &amp; Ashby ATS APIs with AI resume-to-job fit scoring (OpenAI, embeddings).</div>
+    <div class="proj"><span class="pname">ChatGPT Voice Adoption</span> <span class="tag">— case study.</span> 0&#8594;1 growth strategy for India; 75-user survey &#8594; an on-device &ldquo;Privacy Mode&rdquo; to remove the top adoption barrier.</div>
+    <div class="proj"><span class="pname">Swiggy Instamart</span> <span class="tag">— growth teardown.</span> Variant-selection funnel analysis with RICE prioritization and a 6-test experimentation plan.</div>
+    <div class="proj"><span class="pname">WhatsApp Business Search</span> <span class="tag">— product research.</span> User interviews, TAM/SAM/SOM sizing, and a context-aware retrieval proposal for micro-businesses.</div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-row"><span class="lbl">Product:</span> Discovery · Roadmapping · Prioritization (RICE) · North Star &amp; funnel metrics (AARRR) · Experimentation / A-B testing · User research · Jobs-to-be-Done · Stakeholder management · Agile</div>
+    <div class="skills-row"><span class="lbl">Technical &amp; tools:</span> SQL · API integrations · Python · Product analytics · Figma · Make.com · OpenAI / LLMs · No-code automation</div>
+  </section>
+
+  <section>
+    <h2>Education &amp; Certification</h2>
+    <div class="two">
+      <div class="edu-item">
+        <div class="t">B.Tech — Indian Institute of Technology (IIT) Jammu</div>
+        <div class="s">Bachelor of Technology</div>
+      </div>
+      <div class="edu-item">
+        <div class="t">NextLeap Product Management Fellowship</div>
+        <div class="s">Product management certification</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

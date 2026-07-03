@@ -16,7 +16,8 @@ export function ProjectMock({
     | "learning"
     | "research"
     | "finance"
-    | "commerce";
+    | "commerce"
+    | "voice";
   accent: string;
   className?: string;
 }) {
@@ -43,6 +44,7 @@ export function ProjectMock({
         {variant === "research" && <ResearchMock />}
         {variant === "finance" && <FinanceMock />}
         {variant === "commerce" && <CommerceMock />}
+        {variant === "voice" && <VoiceMock />}
       </div>
     </div>
   );
@@ -57,6 +59,7 @@ function hostFor(v: string) {
       research: "research / whatsapp-search.pdf",
       finance: "finance.app / insights",
       commerce: "instamart / variant-picker",
+      voice: "chatgpt / voice-input",
     } as Record<string, string>
   )[v];
 }
@@ -289,6 +292,54 @@ function CommerceMock() {
         style={{ background: "var(--mock)" }}
       >
         ADD
+      </div>
+    </div>
+  );
+}
+
+function VoiceMock() {
+  // a voice-input bar: privacy toggle + animated-looking waveform + mic
+  const bars = [10, 22, 14, 30, 18, 34, 24, 38, 20, 30, 16, 26, 12, 22, 14];
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center justify-between rounded-lg border border-border bg-card px-3 py-2">
+        <div className={cn(bar, "h-2.5 w-20")} />
+        <div className="flex items-center gap-1.5">
+          <span className="text-[8px] font-semibold text-muted">Privacy</span>
+          <div
+            className="flex h-3.5 w-6 items-center rounded-full px-0.5"
+            style={{ background: "var(--mock)" }}
+          >
+            <span className="ml-auto h-2.5 w-2.5 rounded-full bg-white" />
+          </div>
+        </div>
+      </div>
+      {/* waveform */}
+      <div className="flex items-center justify-center gap-[3px] rounded-lg border border-border bg-card py-5">
+        {bars.map((h, i) => (
+          <span
+            key={i}
+            className="w-[3px] rounded-full"
+            style={{
+              height: `${h}px`,
+              background: "var(--mock)",
+              opacity: 0.4 + (h / 40) * 0.6,
+            }}
+          />
+        ))}
+      </div>
+      {/* input bar with mic */}
+      <div className="flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2">
+        <div className={cn(bar, "h-2 flex-1")} />
+        <span
+          className="grid h-7 w-7 place-items-center rounded-full text-white"
+          style={{ background: "var(--mock)" }}
+        >
+          <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor">
+            <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3z" />
+            <path d="M5 11a7 7 0 0 0 14 0h-2a5 5 0 0 1-10 0H5z" />
+          </svg>
+        </span>
       </div>
     </div>
   );
