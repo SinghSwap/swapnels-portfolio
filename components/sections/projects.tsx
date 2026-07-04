@@ -59,7 +59,7 @@ export function Projects() {
         {/* Group 1 — built */}
         <Group
           title="Problems I built solutions for"
-          subtitle="Products I designed, built, and shipped end-to-end — each one started as a problem I personally had."
+          subtitle="Products I designed, built, and shipped end-to-end outside my day job — each one started as a problem I personally had."
           projects={built}
           className="mt-4"
         />

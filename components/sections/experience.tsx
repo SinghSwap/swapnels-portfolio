@@ -52,7 +52,7 @@ export function Experience() {
         <SectionHeading
           eyebrow="Professional Journey"
           title="One bank. Four years. Compounding scope."
-          description="From owning internal enterprise applications to leading large-scale employee experiences used across ICICI Bank."
+          description="Four years at ICICI Bank — growing from a critical business problem to owning enterprise-scale platforms."
         />
 
         <div ref={railRef} className="relative mt-16">
@@ -71,7 +71,8 @@ export function Experience() {
           </motion.div>
 
           <div className="space-y-8">
-            {journey.map((entry, i) => (
+            {/* data is authored oldest→newest; display newest-first */}
+            {[...journey].reverse().map((entry, i) => (
               <Reveal key={entry.year} delay={i}>
                 <TimelineNode entry={entry} />
               </Reveal>
@@ -91,15 +92,15 @@ function TimelineNode({ entry }: { entry: JourneyEntry }) {
       <span
         className={cn(
           "absolute left-5 top-1 grid -translate-x-1/2 place-items-center rounded-full border bg-card transition-colors",
-          entry.current
+          entry.hero
             ? "h-11 w-11 border-accent text-accent shadow-sm shadow-accent/20"
             : "h-9 w-9 border-border text-muted-foreground"
         )}
       >
-        <Icon className={entry.current ? "h-5 w-5" : "h-4 w-4"} />
+        <Icon className={entry.hero ? "h-5 w-5" : "h-4 w-4"} />
       </span>
 
-      {entry.current ? (
+      {entry.hero ? (
         <ActiveCard entry={entry} />
       ) : (
         <MilestoneCard entry={entry} />
@@ -110,24 +111,31 @@ function TimelineNode({ entry }: { entry: JourneyEntry }) {
 
 function YearBadge({ entry }: { entry: JourneyEntry }) {
   return (
-    <div className="flex items-center gap-3">
-      <span
-        className={cn(
-          "font-bold tracking-tight",
-          entry.current ? "text-3xl text-accent sm:text-4xl" : "text-2xl sm:text-3xl"
-        )}
-      >
-        {entry.year}
-      </span>
-      {entry.current && (
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-          </span>
-          Current
-        </span>
+    <div>
+      {entry.stage && (
+        <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-widest text-accent">
+          {entry.stage}
+        </div>
       )}
+      <div className="flex items-center gap-3">
+        <span
+          className={cn(
+            "font-bold tracking-tight",
+            entry.hero ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"
+          )}
+        >
+          {entry.year}
+        </span>
+        {entry.current && (
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            Current
+          </span>
+        )}
+      </div>
     </div>
   );
 }

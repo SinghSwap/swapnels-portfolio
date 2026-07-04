@@ -6,9 +6,9 @@
 export const site = {
   name: "Swapnel Singh",
   title: "Product Manager | Product Builder",
-  headline: "I build products that solve real problems.",
+  headline: "Enterprise products by profession. AI products by habit.",
   subheadline:
-    "3+ years driving digital products at ICICI Bank and continuously building AI-powered tools, automations, and product experiments to improve everyday workflows.",
+    "I build enterprise HR products at ICICI Bank. Outside work, I build AI products and automations that solve everyday problems.",
   email: "reachtoswapnelsingh@gmail.com",
   location: "India",
   resumeUrl: "/resume.pdf",
@@ -28,50 +28,57 @@ export const stats = [
 ];
 
 export const about = {
-  subtitle:
-    "Building enterprise products today, preparing to build customer-first products tomorrow.",
+  subtitle: "Enterprise product experience, sharpened by building my own.",
   intro:
-    "I'm a product builder who came up through enterprise. Over 3+ years at ICICI Bank, I've owned HR-technology platforms used by thousands of employees — and while my title read Manager, the work was squarely Product Management: discovery, stakeholder alignment, prioritization, roadmap execution, and untangling messy user journeys. Now I'm making it official — moving into a dedicated Product Manager role where I can build customer-first products with real, measurable impact.",
+    "I'm a product builder with 3+ years of experience leading enterprise HR technology initiatives at ICICI Bank. I partner with business stakeholders and engineering teams to prioritize features, define requirements, improve user journeys, and drive product delivery for platforms used by thousands of employees. I'm now looking to bring that enterprise product experience to a dedicated Product Manager role, building customer-centric products with measurable business impact.",
   quickFacts: [
-    { icon: "experience", label: "Experience", value: "3+ Years" },
-    { icon: "company", label: "Company", value: "ICICI Bank" },
+    {
+      icon: "experience",
+      label: "Experience",
+      value: "3+ Years in Product Delivery",
+    },
+    { icon: "company", label: "Company", value: "ICICI Bank (Enterprise)" },
+    {
+      icon: "workedon",
+      label: "Worked On",
+      value: "Recruitment · Onboarding · Internal HR Platforms",
+    },
+    {
+      icon: "interests",
+      label: "Interests",
+      value: "AI Products · Consumer Tech · Platform Products",
+    },
     { icon: "education", label: "Education", value: "B.Tech — IIT Jammu" },
     {
       icon: "certification",
       label: "Certification",
       value: "NextLeap PM Fellowship",
     },
-    { icon: "location", label: "Location", value: "India" },
-    {
-      icon: "interests",
-      label: "Interests",
-      value: "AI · Consumer · Product Strategy",
-    },
   ],
   principles: [
     {
       icon: "problem",
-      title: "Start with the Problem",
-      desc: "Understand the user's pain before proposing a solution.",
+      title: "User-Centric Thinking",
+      desc: "Every roadmap starts with understanding user pain before discussing solutions.",
     },
     {
       icon: "purpose",
-      title: "Build with Purpose",
-      desc: "Every feature should solve a measurable problem.",
+      title: "Business Impact",
+      desc: "Prioritize features that create measurable value for users and the business.",
     },
     {
       icon: "systems",
-      title: "Think in Systems",
-      desc: "Balance user needs, business goals, and constraints.",
+      title: "Data-Informed Decisions",
+      desc: "Combine user research, analytics, and stakeholder input to make better product decisions.",
     },
     {
       icon: "iterate",
-      title: "Learn Through Iteration",
-      desc: "Ship, measure, and improve — relentlessly.",
+      title: "Execution Excellence",
+      desc: "Break ambiguity into clear requirements and deliver products through cross-functional collaboration.",
     },
   ],
   currentFocus:
-    "Right now I'm sharpening the craft from both sides — owning enterprise products at scale, shipping my own side projects, running user research, and working through structured PM learning — all pointed at stepping into a customer-facing Product Manager role.",
+    "Building products beyond work, conducting user research, and strengthening my product thinking through real-world case studies and hands-on projects. I'm focused on applying my enterprise product experience to build customer-centric products in a product-first environment.",
 };
 
 // -----------------------------------------------------------------------------
@@ -83,6 +90,11 @@ export type JourneyEntry = {
   year: string;
   title: string;
   icon: "platform" | "scale" | "launch" | "transform";
+  /** Narrative stage label shown above the year (the story arc). */
+  stage?: string;
+  /** Renders the large, emphasized card — the hero of the story. */
+  hero?: boolean;
+  /** Marks the actual current role (the "Current" badge). */
   current?: boolean;
   scope?: string;
   scale?: string;
@@ -98,88 +110,93 @@ export type JourneyEntry = {
 
 export const journey: JourneyEntry[] = [
   {
-    year: "2026",
-    title: "Product Owner — UOTM",
-    icon: "platform",
-    current: true,
-    scope: "Enterprise-wide employee platform",
-    scale: "~150,000 employees daily",
-    paragraphs: [
-      "I own one of ICICI Bank's flagship employee platforms — the primary digital workplace employees live in after they join.",
-      "It's the single destination for everyday work: attendance, leave, salary, internal job opportunities, referrals, HR support, and manager approvals. I own it end-to-end — from requirement discovery and roadmap to prioritization, delivery, releases, and post-launch support.",
-    ],
-    metrics: [
-      { label: "Enterprise platform", sub: "The bank's digital workplace" },
-      { label: "~150K", sub: "Daily active employees" },
-      { label: "End-to-end", sub: "Full product ownership" },
-      { label: "Cross-functional", sub: "Stakeholders across the org" },
-    ],
-    highlight:
-      "Owning the platform 150K employees touch every day — the widest scope of my career so far.",
-  },
-  {
-    year: "2025",
-    title: "Product Owner — iUniverse",
-    icon: "scale",
-    scope: "Applicant onboarding platform",
-    scale: "Scaling a live product",
-    paragraphs: [
-      "Led the production launch and continuous evolution of iUniverse, ICICI Bank's applicant onboarding platform.",
-      "Anchored the roadmap on a single North Star — Day-1 Readiness Rate (candidates fully ready on day one ÷ offers accepted) — with a leading-metric tree (document-upload completion, first-time approval, background-verification SLA) to catch funnel drop-off before it ever reached onboarding.",
-    ],
-    detailsLabel: "Outcomes",
-    details: [
-      "~30% faster onboarding turnaround",
-      "~25% fewer support queries",
-      "Day-1 Readiness as the North Star metric",
-      "Multiple production releases shipped",
-    ],
-    highlight:
-      "Turned a fresh launch into a metric-driven, continuously improving product.",
-  },
-  {
-    year: "2024",
-    title: "Product Owner — iUniverse (0 → 1 Build)",
-    icon: "launch",
-    scope: "Greenfield product build",
-    scale: "Up to 80,000 applicants / month",
-    paragraphs: [
-      "Owned end-to-end delivery of iUniverse from early development to production readiness — digitizing the entire pre-joining journey so a candidate is fully ready before day one.",
-      "Mapped and built the onboarding funnel: offer → document upload → verification → background check → Active Directory credential creation → password setup → Day-1 ready. Worked closely with HR, Operations, and Engineering to define requirements, prioritize, validate workflows, and manage releases.",
-    ],
-    detailsLabel: "Ownership",
-    details: [
-      "Funnel & journey mapping",
-      "Requirement gathering",
-      "Feature prioritization",
-      "API integration",
-      "UAT",
-      "Release management",
-    ],
-    highlight:
-      "Shipped a greenfield onboarding platform that gets candidates Day-1 ready at high volume.",
-  },
-  {
     year: "2023",
-    title: "Product Owner — Employee Verification Transformation",
+    stage: "Business problem solving",
+    title: "Manager — Background Verification Transformation",
     icon: "transform",
     scope: "Enterprise workflow redesign",
     scale: "Bank-wide hiring governance",
     paragraphs: [
-      "Led a business-critical initiative to redesign the employee background-verification workflow.",
-      "Verification used to start only after someone became an employee — so adverse reports could arrive months post-onboarding. I shifted the journey from Employee ID to Applicant ID so verification begins before employee creation, cutting operational risk and improving hiring governance.",
+      "Led a background-verification transformation to fix a costly timing problem: checks only began after someone was hired, so red flags surfaced months too late.",
+      "I redesigned the journey to start verification at the applicant stage — before hiring — reducing operational risk, improving hiring governance, and catching issues far earlier.",
     ],
-    detailsLabel: "Ownership",
+    detailsLabel: "Focus",
     details: [
-      "Requirement discovery",
-      "Process redesign",
+      "Journey redesign",
+      "Workflow optimization",
       "Stakeholder alignment",
-      "Product ownership",
-      "UAT",
-      "Production deployment",
+      "Product strategy",
     ],
     highlight:
       "Solved a business-critical problem by redesigning the workflow — not just digitizing it.",
+  },
+  {
+    year: "2024",
+    stage: "0 → 1 product build",
+    title: "Manager — Recruitment & Onboarding Platform (0 → 1 Build)",
+    icon: "launch",
+    scope: "Greenfield product build",
+    scale: "Up to 80,000 candidates / month",
+    paragraphs: [
+      "Built ICICI Bank's recruitment & onboarding platform from the ground up — digitizing a manual, high-volume journey for up to 80,000 candidates a month before they ever joined.",
+      "Mapping the full candidate journey came first; from there I gathered requirements across HR, operations, and engineering, prioritized what to build first, and drove releases as the product went from zero to production.",
+    ],
+    detailsLabel: "Ownership",
+    details: [
+      "Journey mapping",
+      "Requirement gathering",
+      "Prioritization",
+      "Release management",
+      "Cross-functional execution",
+      "Stakeholder management",
+    ],
+    highlight:
+      "Took a greenfield platform for high-volume recruitment from a blank page to production.",
+  },
+  {
+    year: "2025",
+    stage: "Product scaling & optimization",
+    title: "Manager — Recruitment & Onboarding Platform",
+    icon: "scale",
+    hero: true,
+    scope: "Recruitment & onboarding platform",
+    scale: "Scaling a live product",
+    paragraphs: [
+      "Led the launch and continuous improvement of the recruitment & onboarding platform, owning the candidate journey from offer to first day — for candidates, HR teams, hiring managers, and operations.",
+      "I set a single North Star — how many candidates are fully ready on day one — and used it to prioritize the roadmap, tracking a few leading signals across the journey to catch drop-off early and decide what to build next.",
+    ],
+    metrics: [
+      { label: "North Star", sub: "Day-1 readiness" },
+      { label: "~30% faster", sub: "Onboarding turnaround" },
+      { label: "~25% fewer", sub: "Support queries" },
+      { label: "Continuous iteration", sub: "Roadmap · Prioritization" },
+    ],
+    highlight:
+      "Turned a fresh launch into a metric-driven product — a clear North Star and continuous iteration kept improving the candidate experience.",
+  },
+  {
+    year: "2026",
+    stage: "Enterprise platform ownership",
+    title: "Manager — Employee Experience Platform",
+    icon: "platform",
+    current: true,
+    scope: "Enterprise employee experience platform",
+    scale: "150K+ employees",
+    paragraphs: [
+      "Expanded into broader enterprise ownership: the product roadmap and delivery for ICICI Bank's employee experience platform — the digital workplace ~150,000 employees rely on every day.",
+      "The real challenge is balancing competing HR and business priorities at that scale. I run discovery with stakeholders, prioritize the roadmap by operational impact, turn ambiguity into clear requirements, drive delivery through release, and iterate on adoption.",
+    ],
+    detailsLabel: "Ownership",
+    details: [
+      "Product strategy",
+      "Roadmap",
+      "Prioritization",
+      "Stakeholder management",
+      "Delivery & releases",
+      "150K+ employees",
+    ],
+    highlight:
+      "Expanded from product delivery into enterprise-scale ownership — the roadmap and delivery for the platform 150K+ employees depend on daily.",
   },
 ];
 
@@ -231,16 +248,16 @@ export const projects: Project[] = [
   },
   {
     slug: "ai-job-search-engine",
-    title: "AI-Powered Job Search Engine",
+    title: "AI Job Search Engine",
     tag: "Personal Product",
     oneLiner:
-      "An ATS-integrated engine that fetches PM roles automatically and scores them against your resume.",
+      "An ATS-integrated engine that pulls PM roles automatically and scores each one against your resume.",
     problem:
       "Finding relevant Product Manager jobs meant visiting hundreds of company career pages manually, every single day.",
     whyItMattered:
       "Job hunting is a high-stakes, time-boxed effort. Hours lost to manual browsing are hours not spent preparing or applying — and great roles get filled fast.",
     solution:
-      "Built a system that integrates with ATS providers — Greenhouse, Lever, and Ashby APIs — to fetch openings automatically, then layers AI-based resume-to-job matching to score each opportunity by fit.",
+      "It pulls live openings straight from Greenhouse, Lever, and Ashby, then scores each one against your resume with AI fit-matching — so you only ever see roles worth applying to. I built the integrations, the matching logic, and the export flows end to end.",
     role:
       "Sole product owner and builder: defined the scope, designed the matching logic, built the integrations, and shipped the export workflows.",
     features: [
@@ -252,8 +269,8 @@ export const projects: Project[] = [
     ],
     tools: ["Python", "ATS APIs", "OpenAI", "Embeddings", "JSON"],
     impact:
-      "Reduced manual job-search effort from hours to minutes, surfacing only roles that actually fit.",
-    lesson: "Automation compounds productivity.",
+      "Turned a daily hours-long slog into a minutes-long, ranked shortlist — signal over volume.",
+    lesson: "A sharper filter beats more listings — signal, not volume, is what makes a search fast.",
     accent: "#2563eb",
     caseStudySlug: "ai-job-search-engine",
   },
@@ -262,13 +279,13 @@ export const projects: Project[] = [
     title: "Sunday Basket",
     tag: "Personal Product",
     oneLiner:
-      "An AI-powered weekly meal-planning assistant that cuts grocery costs and removes the mental effort of deciding what to cook.",
+      "A weekly meal-planning assistant that cuts grocery costs and removes the mental effort of deciding what to cook.",
     problem:
       "The real cost of weekly groceries wasn't the shopping — it was the ~1 hour of planning beforehand. I kept postponing it, then defaulted to multiple costly mid-week orders, impulse buys, and wasted ingredients.",
     whyItMattered:
       "Ordering groceries once a week is meaningfully cheaper, but only if the planning actually happens. The planning overhead was the single point of failure between me and consistent, cheaper bulk shopping.",
     solution:
-      "Built a Sunday-morning automation that generates a 7-day breakfast/lunch/dinner plan optimized for ingredient reuse, consolidates it into one categorized grocery list, and emails it to me before I shop — in under five minutes of my time.",
+      "A Sunday-morning automation generates a 7-day breakfast/lunch/dinner plan optimized for ingredient reuse, consolidates it into one categorized grocery list, and emails it before I shop — in under five minutes of my time.",
     role:
       "Sole product manager and builder: framed the problem, set the hypothesis, scoped the MVP, designed the prompt and workflow, and shipped it for myself.",
     features: [
@@ -281,7 +298,7 @@ export const projects: Project[] = [
     tools: ["Make.com", "AI / LLM", "Email Automation", "Scheduling"],
     impact:
       "Cut weekly planning from ~1 hour to under 5 minutes, making once-a-week bulk shopping the easy default — fewer mid-week orders, less impulse spend, less waste.",
-    lesson: "Small repetitive problems deserve product thinking too.",
+    lesson: "The bottleneck wasn't the shopping — it was the decision. Solve the decision, and the habit sticks.",
     accent: "#16a34a",
     caseStudySlug: "sunday-basket",
   },
@@ -296,7 +313,7 @@ export const projects: Project[] = [
     whyItMattered:
       "Interview prep rewards structured recall. Fragmented knowledge is hard to revise and easy to forget under pressure.",
     solution:
-      "Built an offline web application to organize frameworks, interview concepts, metrics, and case studies — all locally persisted and instantly searchable.",
+      "An offline web app that keeps frameworks, interview concepts, metrics, and case studies locally persisted and instantly searchable — one place, always available.",
     role:
       "Designed the information architecture and built the full app, front to back.",
     features: [
@@ -306,13 +323,14 @@ export const projects: Project[] = [
       "Structured interview preparation",
     ],
     tools: ["HTML", "CSS", "JavaScript"],
-    impact: "Created a personal PM knowledge system I actually revise from.",
-    lesson: "Knowledge becomes powerful when structured.",
+    impact:
+      "Replaced a dozen scattered note apps with one system I actually revise from — organized for recall under interview pressure.",
+    lesson: "Structure is a feature: scattered knowledge is useless the moment you're under pressure.",
     accent: "#9333ea",
   },
   {
     slug: "whatsapp-business-search",
-    title: "WhatsApp Business Search Research",
+    title: "WhatsApp Business Search",
     tag: "Product Research",
     oneLiner:
       "User research and a product proposal for context-aware information retrieval inside business chats.",
@@ -321,7 +339,7 @@ export const projects: Project[] = [
     whyItMattered:
       "For a micro-business, the chat thread is the CRM, the invoice book, and the order log. Losing information there means losing money.",
     solution:
-      "Conducted user research and proposed context-aware information retrieval and customer-memory features, backed by interviews and market sizing.",
+      "Interviews and market sizing pointed to the real fix: not better search, but context-aware retrieval and per-customer memory that surface the right past detail at the right moment.",
     role:
       "Product researcher and strategist: ran interviews, sized the market, mapped journeys, and wrote the PRD.",
     features: [
@@ -333,23 +351,23 @@ export const projects: Project[] = [
     ],
     tools: ["User Research", "PRDs", "Wireframes", "Metrics"],
     impact:
-      "Produced PRDs, wireframes, hypotheses, and success metrics for a context-aware search feature.",
-    lesson: "Great products start with understanding users.",
+      "Turned a vague 'search is broken' complaint into a sized, validated opportunity (~15M reachable businesses) with a shippable feature proposal.",
+    lesson: "Users didn't need better search — they needed the right context surfaced at the right moment.",
     accent: "#128c7e",
     caseStudySlug: "whatsapp-business-search",
   },
   {
     slug: "personal-finance-ai",
-    title: "Personal Finance AI App",
+    title: "Personal Finance AI",
     tag: "Mobile Product",
     oneLiner:
-      "An iOS app concept that classifies spending and gives AI-powered need-vs-want insights.",
+      "An iOS concept that classifies spending and turns it into clear need-vs-want insights.",
     problem:
       "Expense trackers tell you what you spent, but rarely give meaningful insight into how you spend.",
     whyItMattered:
       "Awareness changes behavior. Raw transaction logs don't — insight does.",
     solution:
-      "Designed an iOS app to classify spending, analyze needs vs. wants, and provide AI-powered recommendations on where to adjust.",
+      "An iOS concept that classifies spending, splits it into needs vs. wants, and uses AI to point out exactly where to adjust — insight, not just a ledger.",
     role:
       "Product designer and builder: defined the feature set, designed the flows, and prototyped in SwiftUI.",
     features: [
@@ -359,8 +377,9 @@ export const projects: Project[] = [
       "AI-generated insights and recommendations",
     ],
     tools: ["SwiftUI", "OpenAI"],
-    impact: "A focused tool that turns raw spending into financial awareness.",
-    lesson: "AI should simplify financial awareness.",
+    impact:
+      "Reframes 'what did I spend' into 'what should I change' — the decision most trackers leave to the user.",
+    lesson: "Tracking is table stakes; the product only earns its place when it tells you what to do next.",
     accent: "#ea580c",
   },
   {
@@ -376,7 +395,7 @@ export const projects: Project[] = [
     solution:
       "Scoped to the highest-leverage barrier — privacy — and proposed an on-device Privacy Mode (no training, no memories, user-controlled), surfaced from the home screen to also close the awareness gap.",
     role:
-      "End-to-end PM case study: market analysis, segmentation & TAM, problem framing & solution, and system design & metrics.",
+      "A full PM case study: market analysis, segmentation & TAM, problem framing & solution, and system design & metrics.",
     features: [
       "Market & opportunity analysis (India voice landscape)",
       "Competitive UX teardown (ChatGPT vs Alexa vs Assistant)",
@@ -394,30 +413,16 @@ export const projects: Project[] = [
 ];
 
 export const productThinking: string[] = [
-  "Metrics",
-  "AARRR Framework",
   "North Star Metrics",
+  "AARRR Funnels",
   "Jobs To Be Done",
-  "Prioritization",
+  "Prioritization (RICE)",
   "User Research",
+  "Experimentation & A/B Testing",
   "Product Analytics",
-  "Experimentation",
-  "SQL",
-  "API Integrations",
-  "Agile",
   "Stakeholder Management",
-  "Feature Prioritization",
-];
-
-export type TimelineNode = {
-  title: string;
-  detail: string;
-};
-
-export const timeline: TimelineNode[] = [
-  { title: "IIT Jammu", detail: "Engineering foundation — first-principles problem solving." },
-  { title: "ICICI Bank", detail: "Manager, Product & Digital Transformation." },
-  { title: "Transitioning into Startup PM Roles", detail: "Where building and shipping move fastest." },
+  "API Integrations",
+  "SQL",
 ];
 
 // -----------------------------------------------------------------------------
@@ -666,7 +671,7 @@ export const caseStudies: CaseStudy[] = [
     tag: "Personal Product",
     accent: "#16a34a",
     summary:
-      "An AI-powered weekly meal-planning assistant I built to cut my grocery costs and eliminate the mental effort of deciding what to cook.",
+      "A weekly meal-planning assistant I built to cut my grocery costs and eliminate the mental effort of deciding what to cook.",
     problem:
       "The real cost of weekly groceries wasn't the shopping — it was the ~1 hour of planning beforehand that I kept postponing, which pushed me into costly mid-week orders, impulse buys, and wasted ingredients.",
     user:

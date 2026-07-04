@@ -6,7 +6,7 @@ import {
   Crosshair,
   GraduationCap,
   Landmark,
-  MapPin,
+  LayoutGrid,
   RefreshCw,
   Search,
   Sparkles,
@@ -17,9 +17,9 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 const factIcons = {
   experience: Briefcase,
   company: Landmark,
+  workedon: LayoutGrid,
   education: GraduationCap,
   certification: Award,
-  location: MapPin,
   interests: Sparkles,
 } as const;
 
@@ -93,7 +93,7 @@ export function About() {
                       </span>
                       <div className="min-w-0">
                         <div className="text-xs text-muted">{f.label}</div>
-                        <div className="truncate text-sm font-medium text-foreground">
+                        <div className="text-sm font-medium leading-snug text-foreground">
                           {f.value}
                         </div>
                       </div>

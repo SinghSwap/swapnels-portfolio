@@ -205,9 +205,8 @@ export function SundayBasket() {
           </Reveal>
           <Reveal delay={2}>
             <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
-              An AI-powered weekly meal-planning assistant that helps me reduce
-              grocery costs and eliminate the mental effort of deciding what to
-              cook.
+              A weekly meal-planning assistant that helps me reduce grocery
+              costs and eliminate the mental effort of deciding what to cook.
             </p>
           </Reveal>
           <Reveal delay={3}>

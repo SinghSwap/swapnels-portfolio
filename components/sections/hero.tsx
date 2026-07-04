@@ -26,14 +26,14 @@ export function Hero() {
       <div className="relative mx-auto max-w-5xl px-6">
         <motion.div initial="hidden" animate="visible" className="flex flex-col items-center text-center">
           <motion.div custom={0} variants={fade} className="mb-8">
-            <div className="relative h-24 w-24 overflow-hidden rounded-full border border-border bg-card shadow-sm">
+            <div className="relative h-[120px] w-[120px] overflow-hidden rounded-full border border-border bg-card shadow-sm">
               <Image
                 src="/profile.jpg"
                 alt={site.name}
-                width={192}
-                height={192}
+                width={240}
+                height={240}
                 priority
-                className="h-24 w-24 object-cover"
+                className="h-[120px] w-[120px] object-cover"
               />
               <span className="absolute bottom-1 right-1 z-10 h-4 w-4 rounded-full border-2 border-card bg-green-500" />
             </div>
@@ -53,9 +53,9 @@ export function Hero() {
             variants={fade}
             className="text-balance text-5xl font-semibold tracking-tight sm:text-6xl md:text-7xl"
           >
-            I build products that
-            <br className="hidden sm:block" /> solve{" "}
-            <span className="text-accent">real problems.</span>
+            Enterprise products by profession.
+            <br className="hidden sm:block" />{" "}
+            <span className="text-accent">AI products by habit.</span>
           </motion.h1>
 
           <motion.p
