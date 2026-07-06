@@ -1,18 +1,14 @@
 import {
   Award,
-  Boxes,
   Briefcase,
   Compass,
-  Crosshair,
   GraduationCap,
   Landmark,
   LayoutGrid,
-  RefreshCw,
-  Search,
   Sparkles,
 } from "lucide-react";
 import { about } from "@/lib/data";
-import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
+import { Reveal } from "@/components/ui/reveal";
 
 const factIcons = {
   experience: Briefcase,
@@ -21,13 +17,6 @@ const factIcons = {
   education: GraduationCap,
   certification: Award,
   interests: Sparkles,
-} as const;
-
-const principleIcons = {
-  problem: Search,
-  purpose: Crosshair,
-  systems: Boxes,
-  iterate: RefreshCw,
 } as const;
 
 export function About() {
@@ -104,29 +93,6 @@ export function About() {
             </div>
           </Reveal>
         </div>
-
-        {/* principles */}
-        <RevealGroup
-          className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-          stagger={0.08}
-        >
-          {about.principles.map((p) => {
-            const Icon = principleIcons[p.icon as keyof typeof principleIcons];
-            return (
-              <RevealItem key={p.title}>
-                <div className="group h-full rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-105">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-4 font-semibold">{p.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    {p.desc}
-                  </p>
-                </div>
-              </RevealItem>
-            );
-          })}
-        </RevealGroup>
       </div>
     </section>
   );

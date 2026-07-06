@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import {
   ArrowLeft,
   ArrowUpRight,
-  Check,
   Lightbulb,
   Target,
   TrendingUp,
@@ -113,25 +112,6 @@ export default async function ProjectPage({
             />
             <Block icon={Wrench} title="Solution" body={project.solution} />
             <Block icon={User2} title="My role" body={project.role} />
-
-            {project.features && (
-              <Reveal>
-                <div>
-                  <h2 className="text-xl font-semibold">Features</h2>
-                  <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                    {project.features.map((f) => (
-                      <li
-                        key={f}
-                        className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 text-sm"
-                      >
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                        <span className="text-foreground/90">{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            )}
 
             <Reveal>
               <div className="grid gap-4 sm:grid-cols-2">

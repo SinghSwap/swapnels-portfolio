@@ -220,6 +220,24 @@ function MilestoneCard({ entry }: { entry: JourneyEntry }) {
 
       <p className="mt-4 leading-relaxed text-muted-foreground">{first}</p>
 
+      {entry.metrics && (
+        <div className="mt-5 grid grid-cols-3 gap-3">
+          {entry.metrics.map((m) => (
+            <div
+              key={m.label}
+              className="rounded-2xl border border-border bg-background-subtle p-4 transition-colors hover:border-accent/40"
+            >
+              <div className="text-lg font-semibold tracking-tight text-foreground">
+                {m.label}
+              </div>
+              <div className="mt-1 text-xs leading-snug text-muted-foreground">
+                {m.sub}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
       <AnimatePresence initial={false}>
         {open && (
           <motion.div

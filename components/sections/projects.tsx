@@ -1,4 +1,4 @@
-import { ArrowUpRight, GraduationCap, Lightbulb, Target, Wrench } from "lucide-react";
+import { ArrowUpRight, GraduationCap, Lightbulb, Sparkles, Target, Wrench } from "lucide-react";
 import { projects, type Project } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
@@ -67,7 +67,7 @@ export function Projects() {
         {/* Group 2 — product thinking */}
         <Group
           eyebrow="Showcasing PM thinking"
-          title="Teardowns & 0→1 case studies"
+          title="Product Strategy & Case Studies"
           subtitle="How I think about products I didn't build — strategy, user research, prioritization, and metrics."
           projects={caseStudies}
           className="mt-24"
@@ -123,7 +123,12 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
     : `/projects/${p.slug}`;
 
   return (
-    <div className="group rounded-3xl border border-border bg-card p-2 transition-all duration-300 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
+    <div
+      className={cn(
+        "group rounded-3xl border border-border bg-card p-2 transition-all duration-300 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5",
+        p.featured && "shadow-lg"
+      )}
+    >
       <div
         className={cn(
           "grid items-center gap-6 lg:grid-cols-2",
@@ -137,9 +142,16 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
 
         {/* copy */}
         <div className="p-4 sm:p-6 lg:[direction:ltr]">
-          <div className="mb-4 flex items-center gap-3">
+          <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="accent">{p.tag}</Badge>
-            <span className="text-xs text-muted">
+            <StatusBadge status={p.status} />
+            {p.featured && (
+              <span className="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent-soft/50 px-2.5 py-1 text-xs font-medium text-accent">
+                <Sparkles className="h-3 w-3" />
+                Featured
+              </span>
+            )}
+            <span className="ml-auto text-xs text-muted">
               {String(i + 1).padStart(2, "0")}
             </span>
           </div>
@@ -184,6 +196,23 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
         </div>
       </div>
     </div>
+  );
+}
+
+const statusDot: Record<Project["status"]["color"], string> = {
+  green: "bg-emerald-500",
+  amber: "bg-amber-500",
+  blue: "bg-sky-500",
+  purple: "bg-violet-500",
+  gray: "bg-zinc-400",
+};
+
+function StatusBadge({ status }: { status: Project["status"] }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background-subtle px-2.5 py-1 text-xs font-medium text-muted-foreground">
+      <span className={cn("h-1.5 w-1.5 rounded-full", statusDot[status.color])} />
+      {status.label}
+    </span>
   );
 }
 

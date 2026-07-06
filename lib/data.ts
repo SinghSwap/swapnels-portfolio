@@ -55,28 +55,6 @@ export const about = {
       value: "NextLeap PM Fellowship",
     },
   ],
-  principles: [
-    {
-      icon: "problem",
-      title: "User-Centric Thinking",
-      desc: "Every roadmap starts with understanding user pain before discussing solutions.",
-    },
-    {
-      icon: "purpose",
-      title: "Business Impact",
-      desc: "Prioritize features that create measurable value for users and the business.",
-    },
-    {
-      icon: "systems",
-      title: "Data-Informed Decisions",
-      desc: "Combine user research, analytics, and stakeholder input to make better product decisions.",
-    },
-    {
-      icon: "iterate",
-      title: "Execution Excellence",
-      desc: "Break ambiguity into clear requirements and deliver products through cross-functional collaboration.",
-    },
-  ],
   currentFocus:
     "Building products beyond work, conducting user research, and strengthening my product thinking through real-world case studies and hands-on projects. I'm focused on applying my enterprise product experience to build customer-centric products in a product-first environment.",
 };
@@ -117,14 +95,16 @@ export const journey: JourneyEntry[] = [
     scope: "Enterprise workflow redesign",
     scale: "Bank-wide hiring governance",
     paragraphs: [
-      "Led a background-verification transformation to fix a costly timing problem: checks only began after someone was hired, so red flags surfaced months too late.",
-      "I redesigned the journey to start verification at the applicant stage — before hiring — reducing operational risk, improving hiring governance, and catching issues far earlier.",
+      "Led a product-led transformation of ICICI Bank's background-verification workflow to solve a critical timing problem: verification only began after a candidate was hired, so adverse findings surfaced months too late — creating avoidable operational and hiring-governance risk at a bank recruiting at scale.",
+      "I redesigned the hiring journey so verification began at the applicant stage rather than after employee creation — assessing risk up front, reducing operational exposure, strengthening hiring governance, and surfacing issues far earlier in the recruitment lifecycle.",
+      "As the product manager, I partnered with HR, Operations, and Engineering to gather requirements, align stakeholders, redesign the workflow, and coordinate implementation end to end.",
     ],
     detailsLabel: "Focus",
     details: [
-      "Journey redesign",
-      "Workflow optimization",
-      "Stakeholder alignment",
+      "Journey design",
+      "Workflow transformation",
+      "Requirements discovery",
+      "Stakeholder management",
       "Product strategy",
     ],
     highlight:
@@ -136,22 +116,23 @@ export const journey: JourneyEntry[] = [
     title: "Manager — Recruitment & Onboarding Platform (0 → 1 Build)",
     icon: "launch",
     scope: "Greenfield product build",
-    scale: "Up to 80,000 candidates / month",
+    scale: "~80K candidate journeys / month",
     paragraphs: [
-      "Built ICICI Bank's recruitment & onboarding platform from the ground up — digitizing a manual, high-volume journey for up to 80,000 candidates a month before they ever joined.",
-      "Mapping the full candidate journey came first; from there I gathered requirements across HR, operations, and engineering, prioritized what to build first, and drove releases as the product went from zero to production.",
+      "Led the 0→1 build of ICICI Bank's recruitment & onboarding platform — transforming fragmented, manual pre-joining workflows into a production-ready digital experience designed for high-volume hiring across ~80K candidate journeys a month.",
+      "The work was product-first: mapping the end-to-end candidate journey, understanding how HR and operations actually ran pre-joining, and running requirement discovery with business stakeholders to define what the platform had to do. From there I prioritized the build, shaped the roadmap, and drove cross-functional execution across HR, operations, and engineering — carrying the product from a blank page to production readiness and release planning.",
     ],
     detailsLabel: "Ownership",
     details: [
-      "Journey mapping",
-      "Requirement gathering",
+      "Journey design",
+      "Product discovery",
+      "Requirement definition",
       "Prioritization",
-      "Release management",
       "Cross-functional execution",
-      "Stakeholder management",
+      "Stakeholder alignment",
+      "Production readiness",
     ],
     highlight:
-      "Took a greenfield platform for high-volume recruitment from a blank page to production.",
+      "Led the 0→1 product journey from concept to production readiness — turning a fragmented, manual recruitment process into a scalable digital platform built for high-volume hiring.",
   },
   {
     year: "2025",
@@ -183,20 +164,26 @@ export const journey: JourneyEntry[] = [
     scope: "Enterprise employee experience platform",
     scale: "150K+ employees",
     paragraphs: [
-      "Expanded into broader enterprise ownership: the product roadmap and delivery for ICICI Bank's employee experience platform — the digital workplace ~150,000 employees rely on every day.",
-      "The real challenge is balancing competing HR and business priorities at that scale. I run discovery with stakeholders, prioritize the roadmap by operational impact, turn ambiguity into clear requirements, drive delivery through release, and iterate on adoption.",
+      "As part of ICICI Bank's digital HR transformation, fragmented employee journeys spread across multiple systems were consolidated into a unified Employee Experience Platform. The initiative simplified employee experiences, standardized HR workflows, and reduced operational overhead across the organization while supporting 150K+ employees.",
+      "I own product strategy and execution within that broader initiative — collaborating with HR, Operations, and business teams to surface workflow bottlenecks and operational needs, translating those business priorities into clear product requirements, prioritizing the roadmap against operational impact, and managing delivery through release. The platform reduced HR operational effort while helping employees complete common workflows faster.",
+    ],
+    metrics: [
+      { label: "150K+", sub: "Employees supported" },
+      { label: "21% fewer", sub: "HR support queries" },
+      { label: "40% faster", sub: "Common HR workflows" },
     ],
     detailsLabel: "Ownership",
     details: [
       "Product strategy",
-      "Roadmap",
-      "Prioritization",
+      "Business discovery",
+      "Requirement definition",
+      "Roadmap prioritization",
       "Stakeholder management",
-      "Delivery & releases",
-      "150K+ employees",
+      "Delivery & release management",
+      "Continuous improvement",
     ],
     highlight:
-      "Expanded from product delivery into enterprise-scale ownership — the roadmap and delivery for the platform 150K+ employees depend on daily.",
+      "Led product strategy and delivery for ICICI Bank's HR transformation — consolidating fragmented employee journeys into a unified platform serving 150K+ employees while reducing HR support queries and accelerating everyday workflows.",
   },
 ];
 
@@ -204,12 +191,15 @@ export type Project = {
   slug: string;
   title: string;
   tag: string;
+  /** Maturity signal shown as a small dot badge on the card. */
+  status: { label: string; color: "green" | "amber" | "blue" | "purple" | "gray" };
+  /** Marks the hero project — gets a subtle accent border + "Featured" chip. */
+  featured?: boolean;
   oneLiner: string;
   problem: string;
   whyItMattered: string;
   solution: string;
   role: string;
-  features?: string[];
   tools: string[];
   impact: string;
   lesson: string;
@@ -223,25 +213,20 @@ export const projects: Project[] = [
     slug: "instamart-variant-selection",
     title: "Swiggy Instamart — Variant Selection Friction",
     tag: "Product Teardown",
+    status: { label: "Case Study", color: "purple" },
     oneLiner:
-      "A growth-PM teardown of the grocery add-to-cart funnel, where a discount-optimized variant picker quietly leaks conversion, trust, and repeat demand.",
+      "A growth teardown of Instamart's add-to-cart flow, where a discount-first variant picker quietly leaks conversion on everyday staples.",
     problem:
-      "Instamart's variant modal optimizes for discount/AOV signaling at the moment of purchase intent — auto-selecting sold-out packs and hiding the sold-out state — which suppresses add-to-cart conversion on the highest-frequency staple category.",
+      "Instamart's variant picker pushes discounts right at the moment of purchase — auto-selecting sold-out packs and hiding when an item is unavailable — which quietly blocks add-to-cart on its most-bought staples.",
     whyItMattered:
-      "Staple searches (\"aloo\", \"doodh\") are the weekly habit loop that drives q-commerce frequency. Friction there doesn't cost one line item — it taxes the behavior the entire business model depends on.",
+      "Staple searches (\"aloo\", \"doodh\") are the weekly habit that drives q-commerce frequency. Friction there doesn't cost one order — it taxes the behavior the whole business model depends on.",
     solution:
-      "Re-point the variant picker from 'expose discounts' to 'complete the purchase': availability-first defaulting + an unmissable single-source-of-truth sold-out state, with a chip reorder riding along — all gated on revenue-per-session, not AOV.",
+      "Re-point the picker from showing discounts to completing the purchase: default to what's actually in stock, make the sold-out state impossible to miss, and judge success on revenue per session rather than order value.",
     role:
-      "Independent product teardown: observation, root-cause analysis, RICE prioritization, solution design, and an experimentation plan.",
-    features: [
-      "Funnel + root-cause analysis from a recorded session",
-      "RICE prioritization across five interventions",
-      "Six-test experimentation plan with guardrails",
-      "North Star + leading/lagging metric design",
-    ],
+      "Independent teardown — session-based root-cause analysis, RICE prioritization across five fixes, solution design, and a guard-railed experimentation plan.",
     tools: ["Growth PM", "Funnel Analysis", "RICE", "Experimentation"],
     impact:
-      "Directionally ~₹2,000–3,200 of recoverable GMV at risk per 1,000 staple modal opens, before trust and retention effects.",
+      "A directional estimate of ~₹2,000–3,200 in recoverable GMV per 1,000 staple modal opens — before any trust and retention upside.",
     lesson: "Optimize for the purchase you can complete, not the discount you can show.",
     accent: "#fc8019",
     caseStudySlug: "instamart-variant-selection",
@@ -250,23 +235,17 @@ export const projects: Project[] = [
     slug: "ai-job-search-engine",
     title: "AI Job Search Engine",
     tag: "Personal Product",
+    status: { label: "Live", color: "green" },
     oneLiner:
-      "An ATS-integrated engine that pulls PM roles automatically and scores each one against your resume.",
+      "An ATS-integrated engine that pulls PM roles automatically and ranks them by relevance and fit.",
     problem:
       "Finding relevant Product Manager jobs meant visiting hundreds of company career pages manually, every single day.",
     whyItMattered:
       "Job hunting is a high-stakes, time-boxed effort. Hours lost to manual browsing are hours not spent preparing or applying — and great roles get filled fast.",
     solution:
-      "It pulls live openings straight from Greenhouse, Lever, and Ashby, then scores each one against your resume with AI fit-matching — so you only ever see roles worth applying to. I built the integrations, the matching logic, and the export flows end to end.",
+      "It pulls live openings straight from Greenhouse, Lever, and Ashby, then uses AI to rank each one by relevance and fit — so only roles worth applying to ever surface, with clean exports to track and act on them.",
     role:
-      "Sole product owner and builder: defined the scope, designed the matching logic, built the integrations, and shipped the export workflows.",
-    features: [
-      "Multi-ATS integration (Greenhouse, Lever, Ashby)",
-      "Smart job filtering by role, level, and location",
-      "AI resume-to-job fit scoring",
-      "CSV exports for tracking applications",
-      "JSON exports for downstream automation",
-    ],
+      "Owned it end to end — scoped the problem, designed the fit-ranking logic, and built the ATS integrations and export flows.",
     tools: ["Python", "ATS APIs", "OpenAI", "Embeddings", "JSON"],
     impact:
       "Turned a daily hours-long slog into a minutes-long, ranked shortlist — signal over volume.",
@@ -278,8 +257,10 @@ export const projects: Project[] = [
     slug: "meal-planning-automation",
     title: "Sunday Basket",
     tag: "Personal Product",
+    status: { label: "Live", color: "green" },
+    featured: true,
     oneLiner:
-      "A weekly meal-planning assistant that cuts grocery costs and removes the mental effort of deciding what to cook.",
+      "An AI-powered weekly meal-planning assistant that cuts grocery costs and removes the mental effort of deciding what to cook.",
     problem:
       "The real cost of weekly groceries wasn't the shopping — it was the ~1 hour of planning beforehand. I kept postponing it, then defaulted to multiple costly mid-week orders, impulse buys, and wasted ingredients.",
     whyItMattered:
@@ -287,14 +268,7 @@ export const projects: Project[] = [
     solution:
       "A Sunday-morning automation generates a 7-day breakfast/lunch/dinner plan optimized for ingredient reuse, consolidates it into one categorized grocery list, and emails it before I shop — in under five minutes of my time.",
     role:
-      "Sole product manager and builder: framed the problem, set the hypothesis, scoped the MVP, designed the prompt and workflow, and shipped it for myself.",
-    features: [
-      "Auto-generated 7-day meal plan (breakfast, lunch, dinner)",
-      "Ingredient-reuse optimization across meals to cut waste",
-      "One consolidated, de-duplicated grocery list",
-      "Groceries grouped into shopping categories with rough quantities",
-      "Emailed automatically every Sunday before I shop",
-    ],
+      "Framed the problem, set the cost-saving hypothesis, scoped the MVP, and designed the AI prompt and automation workflow end to end.",
     tools: ["Make.com", "AI / LLM", "Email Automation", "Scheduling"],
     impact:
       "Cut weekly planning from ~1 hour to under 5 minutes, making once-a-week bulk shopping the easy default — fewer mid-week orders, less impulse spend, less waste.",
@@ -306,22 +280,17 @@ export const projects: Project[] = [
     slug: "pm-revision",
     title: "PM Revision",
     tag: "Learning Product",
+    status: { label: "Live", color: "green" },
     oneLiner:
-      "An offline web app that organizes PM frameworks, metrics, and case studies into one knowledge system.",
+      "A personal knowledge system that organizes PM frameworks, metrics, and case studies for fast recall.",
     problem:
       "Preparing for PM interviews meant juggling scattered notes, bookmarks, and resources across a dozen places.",
     whyItMattered:
       "Interview prep rewards structured recall. Fragmented knowledge is hard to revise and easy to forget under pressure.",
     solution:
-      "An offline web app that keeps frameworks, interview concepts, metrics, and case studies locally persisted and instantly searchable — one place, always available.",
+      "A personal knowledge system — frameworks, interview concepts, metrics, and case studies, locally persisted and instantly searchable, fully offline and always at hand.",
     role:
-      "Designed the information architecture and built the full app, front to back.",
-    features: [
-      "Local-storage persistence (works fully offline)",
-      "Framework library",
-      "Product case studies",
-      "Structured interview preparation",
-    ],
+      "Designed the information architecture and built the full system, front to back.",
     tools: ["HTML", "CSS", "JavaScript"],
     impact:
       "Replaced a dozen scattered note apps with one system I actually revise from — organized for recall under interview pressure.",
@@ -332,50 +301,39 @@ export const projects: Project[] = [
     slug: "whatsapp-business-search",
     title: "WhatsApp Business Search",
     tag: "Product Research",
+    status: { label: "Research", color: "gray" },
     oneLiner:
-      "User research and a product proposal for context-aware information retrieval inside business chats.",
+      "User research and a product proposal for finding the information buried in business chats.",
     problem:
       "Small businesses struggle to retrieve important information buried inside long WhatsApp chat histories.",
     whyItMattered:
-      "For a micro-business, the chat thread is the CRM, the invoice book, and the order log. Losing information there means losing money.",
+      "For a micro-business, the chat thread is the CRM, invoice book, and order log. Losing information there means losing money.",
     solution:
-      "Interviews and market sizing pointed to the real fix: not better search, but context-aware retrieval and per-customer memory that surface the right past detail at the right moment.",
+      "Interviews and market sizing pointed to the real fix: not better search, but per-customer memory that surfaces the right past detail at the right moment.",
     role:
-      "Product researcher and strategist: ran interviews, sized the market, mapped journeys, and wrote the PRD.",
-    features: [
-      "User interviews with small-business owners",
-      "TAM / SAM / SOM market sizing",
-      "Competitive and market analysis",
-      "User journey mapping",
-      "Feature prioritization",
-    ],
+      "Ran the research and strategy — interviews, market sizing, journey mapping, and the PRD.",
     tools: ["User Research", "PRDs", "Wireframes", "Metrics"],
     impact:
-      "Turned a vague 'search is broken' complaint into a sized, validated opportunity (~15M reachable businesses) with a shippable feature proposal.",
-    lesson: "Users didn't need better search — they needed the right context surfaced at the right moment.",
+      "Turned a vague 'search is broken' complaint into a sized, validated opportunity (~15M reachable businesses) with a shippable proposal.",
+    lesson: "Users didn't need better search — they needed the right context at the right moment.",
     accent: "#128c7e",
     caseStudySlug: "whatsapp-business-search",
   },
   {
     slug: "personal-finance-ai",
-    title: "Personal Finance AI",
+    title: "Spending Coach",
     tag: "Mobile Product",
+    status: { label: "Prototype", color: "blue" },
     oneLiner:
-      "An iOS concept that classifies spending and turns it into clear need-vs-want insights.",
+      "An iOS concept that turns raw spending into clear need-vs-want insights — and tells you what to change.",
     problem:
       "Expense trackers tell you what you spent, but rarely give meaningful insight into how you spend.",
     whyItMattered:
       "Awareness changes behavior. Raw transaction logs don't — insight does.",
     solution:
-      "An iOS concept that classifies spending, splits it into needs vs. wants, and uses AI to point out exactly where to adjust — insight, not just a ledger.",
+      "Classifies spending, splits it into needs vs. wants, and uses AI to pinpoint exactly where to adjust — insight, not just a ledger.",
     role:
-      "Product designer and builder: defined the feature set, designed the flows, and prototyped in SwiftUI.",
-    features: [
-      "Automatic category classification",
-      "Need vs. Want analysis",
-      "Spending distribution charts",
-      "AI-generated insights and recommendations",
-    ],
+      "Defined the feature set, designed the flows, and built a working SwiftUI prototype.",
     tools: ["SwiftUI", "OpenAI"],
     impact:
       "Reframes 'what did I spend' into 'what should I change' — the decision most trackers leave to the user.",
@@ -386,6 +344,7 @@ export const projects: Project[] = [
     slug: "chatgpt-voice-adoption",
     title: "Voice Input Adoption on ChatGPT",
     tag: "Product Case Study",
+    status: { label: "Case Study", color: "purple" },
     oneLiner:
       "A 0→1 case study on getting India's typing-first users to actually use voice — landing on an on-device Privacy Mode.",
     problem:
@@ -393,16 +352,9 @@ export const projects: Project[] = [
     whyItMattered:
       "Voice is 3–4× faster and fits a multilingual, multitasking audience. Whoever earns the voice habit owns the next phase of AI assistants in India.",
     solution:
-      "Scoped to the highest-leverage barrier — privacy — and proposed an on-device Privacy Mode (no training, no memories, user-controlled), surfaced from the home screen to also close the awareness gap.",
+      "Scoped to the highest-leverage barrier — privacy — with an on-device Privacy Mode (no training, no memories, user-controlled), surfaced on the home screen to also close the awareness gap.",
     role:
-      "A full PM case study: market analysis, segmentation & TAM, problem framing & solution, and system design & metrics.",
-    features: [
-      "Market & opportunity analysis (India voice landscape)",
-      "Competitive UX teardown (ChatGPT vs Alexa vs Assistant)",
-      "TAM funnel + a 75-user research study",
-      "Privacy Mode solution, wireframes & system design",
-      "North Star + KPI metric framework",
-    ],
+      "Ran the full 0→1 study — market analysis, segmentation and TAM, problem framing and solution, and system and metric design.",
     tools: ["Product Strategy", "User Research", "0→1", "Wireframing"],
     impact:
       "A privacy-first, shippable path to move India's typing-first users to voice — with a clear metric model to prove it.",
