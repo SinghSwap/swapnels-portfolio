@@ -185,14 +185,14 @@ export function WhatsappSearch() {
           </Reveal>
           <Reveal delay={1}>
             <h1 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
-              Smart Recall — Making WhatsApp Business a System of Record
+              Smart Recall, Making WhatsApp Business a System of Record
             </h1>
           </Reveal>
           <Reveal delay={2}>
             <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
               A 0→1 product case study on fixing information retrieval for India&apos;s
               micro-businesses, who run their entire sales funnel inside WhatsApp
-              chats — and lose deals in the scroll.
+              chats, and lose deals in the scroll.
             </p>
           </Reveal>
           <Reveal delay={3}>
@@ -223,7 +223,7 @@ export function WhatsappSearch() {
         <Section n="01" icon={Globe} title="Market & Opportunity">
           <p>
             WhatsApp is a privacy-first messaging platform for fast, trusted
-            communication — and quietly, business infrastructure. The growth
+            communication, and quietly, business infrastructure. The growth
             isn&apos;t in personal chat (already ~83% penetration); it&apos;s in{" "}
             <B>WhatsApp Business</B>, where better workflows drive higher-value
             engagement and monetization.
@@ -238,7 +238,7 @@ export function WhatsappSearch() {
           />
           <p className="text-sm">
             Monetization today is largely B2B: ~90% paid messaging, &lt;5% Meta
-            Verified, &lt;5% MDR. Better retrieval makes the platform stickier —
+            Verified, &lt;5% MDR. Better retrieval makes the platform stickier,
             and accelerates migration to the paid Business API.
           </p>
         </Section>
@@ -247,7 +247,7 @@ export function WhatsappSearch() {
         <Section n="02" icon={Search} title="The Search & Recall Gap">
           <p>
             Micro-businesses use the chat thread as their CRM, invoice book, and
-            order log — but nothing on the market actually helps them{" "}
+            order log, but nothing on the market actually helps them{" "}
             <B>recall</B> business context from it.
           </p>
           <Table
@@ -255,13 +255,13 @@ export function WhatsappSearch() {
             rows={[
               ["WhatsApp native search", "Simple keyword search across chats", "Poor relevance, no business context"],
               ["Telegram / Slack", "Better search & filters", "Not designed for SMB workflows or context recall"],
-              ["Manual workarounds", "Screenshots, self-forwarding — no setup", "High cognitive cost; no recall logic"],
+              ["Manual workarounds", "Screenshots, self-forwarding, no setup", "High cognitive cost; no recall logic"],
             ]}
           />
           <Callout variant="accent">
             <p>
               <B>Desired goal:</B> let users instantly find any important
-              information on WhatsApp, regardless of when or where it was shared —
+              information on WhatsApp, regardless of when or where it was shared,
               reducing search friction in chaotic chat histories while unlocking
               monetization through structured, retrievable data.
             </p>
@@ -275,7 +275,7 @@ export function WhatsappSearch() {
               <B>If</B> WhatsApp improves retrieval clarity and reliability by
               introducing <B>structured, context-aware search</B> across messages,
               media, documents, and transactions, <B>then</B> small and growing
-              businesses will find critical information faster — reducing workflow
+              businesses will find critical information faster, reducing workflow
               friction and increasing reliance on WhatsApp as a{" "}
               <B>system of record</B>. <B>This drives</B> adoption of advanced
               Business features and APIs, an estimated{" "}
@@ -286,8 +286,8 @@ export function WhatsappSearch() {
           <div className="grid gap-3 sm:grid-cols-3">
             {[
               ["Scope", "Search functionality on the WhatsApp Business app."],
-              ["Why now", "Microbusiness growth is pushing WhatsApp from chat app to business infrastructure — a time-critical window."],
-              ["Constraint", "Treated tech bandwidth as effectively infinite — focus on the right product bet, not feasibility."],
+              ["Why now", "Microbusiness growth is pushing WhatsApp from chat app to business infrastructure, a time-critical window."],
+              ["Constraint", "Treated tech bandwidth as effectively infinite, focus on the right product bet, not feasibility."],
             ].map(([t, d]) => (
               <div key={t} className="rounded-xl border border-border bg-card p-4">
                 <h3 className="text-sm font-semibold text-foreground">{t}</h3>
@@ -300,7 +300,7 @@ export function WhatsappSearch() {
         {/* 4 Target segment */}
         <Section n="04" icon={Target} title="Target Segment & Sizing">
           <p>
-            <B>Micro-business owners in India</B> — sales-led retailers, dealers,
+            <B>Micro-business owners in India</B>, sales-led retailers, dealers,
             and service providers running multiple customer conversations at once.
           </p>
           <Table
@@ -313,7 +313,7 @@ export function WhatsappSearch() {
           />
           <p className="text-sm">
             India has ~65M MSMEs today (~85M by 2027), contributing ~30% of GDP.
-            Microbusinesses are ~97% of that ecosystem — a large, untapped
+            Microbusinesses are ~97% of that ecosystem, a large, untapped
             acquisition and monetization runway as they grow on WhatsApp.
           </p>
         </Section>
@@ -354,7 +354,7 @@ export function WhatsappSearch() {
                 <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                   <li>Convert WhatsApp leads into in-person visits & car sales.</li>
                   <li>Never lose chats, documents, or proof of transactions.</li>
-                  <li>Keep operations simple — no complex CRM.</li>
+                  <li>Keep operations simple, no complex CRM.</li>
                 </ul>
               </div>
               <div>
@@ -363,7 +363,7 @@ export function WhatsappSearch() {
                 </h4>
                 <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                   <li>Finding past quotations, photos, or RC documents is slow.</li>
-                  <li>Keyword search returns every instance — no context.</li>
+                  <li>Keyword search returns every instance, no context.</li>
                   <li>Deals split across WhatsApp & in-person are messy to sync.</li>
                 </ul>
               </div>
@@ -380,7 +380,7 @@ export function WhatsappSearch() {
               ["73%", "of searches target specific chat messages & documents"],
               ["65%", "rely on a “rough timeline” mental model to locate info"],
               ["51%", "use “Starred,” yet self-forwarding stays the preferred bookmark"],
-              ["40%", "reach “slow success” — find it eventually, lose real time"],
+              ["40%", "reach “slow success”, find it eventually, lose real time"],
               ["2 in 5", "are unaware advanced search filters even exist"],
             ].map(([v, l]) => (
               <div
@@ -403,7 +403,7 @@ export function WhatsappSearch() {
           <Callout variant="accent">
             <p>
               As microbusinesses manage more customers and parallel deals,{" "}
-              <B>customer and product context fragments across chats</B> — forcing
+              <B>customer and product context fragments across chats</B>, forcing
               users into manual search and scrolling to run active sales.
             </p>
           </Callout>
@@ -431,7 +431,7 @@ export function WhatsappSearch() {
         <Section n="08" icon={ListChecks} title="Ideation & Prioritization">
           <div className="grid gap-4">
             {[
-              ["Customer Profile & Context Panel", "A persistent “Customer Info” tab inside each chat that auto-aggregates customer details, products discussed, prices quoted, and pinned key messages — a lightweight CRM and single source of truth per customer."],
+              ["Customer Profile & Context Panel", "A persistent “Customer Info” tab inside each chat that auto-aggregates customer details, products discussed, prices quoted, and pinned key messages, a lightweight CRM and single source of truth per customer."],
               ["Smart Conversation Prioritization", "Re-ranks home-screen chats by active product interest, recency, and back-and-forth intensity, so chats with live deals surface to the top automatically."],
               ["Product-Based Active Deal Views", "Groups all chats about the same product (e.g. “Mahindra Thar”) and surfaces every interested buyer, last message, and status (active / cold / closed)."],
             ].map(([t, d]) => (
@@ -449,14 +449,14 @@ export function WhatsappSearch() {
             emphasizeFirst={false}
             headers={["Solution", "Business", "UX", "Tech", "Growth", "Score"]}
             rows={[
-              [<B key="a">Customer Profile & Context Panel</B>, "5", "5", "3", "5", <B key="s">18 — Top</B>],
+              [<B key="a">Customer Profile & Context Panel</B>, "5", "5", "3", "5", <B key="s">18, Top</B>],
               ["Smart Conversation Prioritization", "3", "4", "4", "4", "15"],
               ["Product-Based Active Deal Views", "3", "4", "4", "3", "14"],
             ]}
           />
           <Callout>
             <p className="text-sm">
-              The <B>Context Panel</B> won — highest impact and growth, and it
+              The <B>Context Panel</B> won, highest impact and growth, and it
               directly attacks the validated behavior (self-forwarding to
               remember a customer&apos;s deal). It became <B>Smart Recall</B>.
             </p>
@@ -482,7 +482,7 @@ export function WhatsappSearch() {
                 </li>
                 <li>
                   <B>User chooses chats:</B> the feature is enabled only for
-                  explicitly selected conversations — granular control.
+                  explicitly selected conversations, granular control.
                 </li>
                 <li>
                   <B>Consent:</B> a clear screen explains how it works, what data
@@ -508,8 +508,8 @@ export function WhatsappSearch() {
           <Table
             headers={["Type", "Metric", "Why it matters"]}
             rows={[
-              [<B key="ns">North Star</B>, "Search Success Rate — % of searches that open a message, doc, or media", "Can users actually find what they need?"],
-              ["L1", "Time to Information — median time from search to the right message", "Reduced friction & cognitive load"],
+              [<B key="ns">North Star</B>, "Search Success Rate, % of searches that open a message, doc, or media", "Can users actually find what they need?"],
+              ["L1", "Time to Information, median time from search to the right message", "Reduced friction & cognitive load"],
               ["L1", "Search Attempts per Task", "Less dependence on repeated keyword search"],
               ["L2", "Smart Recall Panel Usage", "Perceived value of structured context"],
               ["Activation", "Smart Recall Opt-In Rate (users with ≥3 failed searches)", "Trust & willingness to enable"],
@@ -532,7 +532,7 @@ export function WhatsappSearch() {
             <div className="flex gap-3">
               <Quote className="h-6 w-6 shrink-0" style={{ color: ACCENT }} />
               <p className="text-lg font-medium italic text-foreground">
-                The winning move wasn&apos;t better search — it was structured
+                The winning move wasn&apos;t better search, it was structured
                 recall, opted into at the exact moment of friction, that turns a
                 noisy chat thread into a trusted system of record.
               </p>

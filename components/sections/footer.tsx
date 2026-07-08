@@ -54,7 +54,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-sm text-muted sm:flex-row">
           <span>
-            © {new Date().getFullYear()} {site.name}. Built with Next.js & Tailwind.
+            © {new Date().getFullYear()} {site.name}.
           </span>
         </div>
       </div>

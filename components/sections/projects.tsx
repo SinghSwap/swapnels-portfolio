@@ -1,4 +1,15 @@
-import { ArrowUpRight, GraduationCap, Lightbulb, Sparkles, Target, Wrench } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import {
+  ArrowUpRight,
+  ChevronDown,
+  GraduationCap,
+  Lightbulb,
+  Sparkles,
+  Target,
+  Wrench,
+} from "lucide-react";
 import { projects, type Project } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
@@ -26,16 +37,18 @@ const mockBySlug: Record<string, MockVariant> = {
 };
 
 // Group 1 — products I actually built and shipped.
+// NOTE: "pm-revision" is intentionally hidden from the live site (kept in
+// lib/data.ts so it can be restored by re-adding its slug here).
 const builtSlugs = [
   "meal-planning-automation",
   "ai-job-search-engine",
   "personal-finance-ai",
-  "pm-revision",
 ];
 // Group 2 — PM-thinking case studies & teardowns (not built).
+// NOTE: "instamart-variant-selection" is intentionally hidden from the live
+// site (kept in lib/data.ts so it can be restored by re-adding its slug here).
 const caseStudySlugs = [
   "chatgpt-voice-adoption",
-  "instamart-variant-selection",
   "whatsapp-business-search",
 ];
 
@@ -59,7 +72,7 @@ export function Projects() {
         {/* Group 1 — built */}
         <Group
           title="Problems I built solutions for"
-          subtitle="Products I designed, built, and shipped end-to-end outside my day job — each one started as a problem I personally had."
+          subtitle="Products I designed, built, and shipped end-to-end outside my day job. Each one started as a problem I personally had."
           projects={built}
           className="mt-4"
         />
@@ -68,7 +81,7 @@ export function Projects() {
         <Group
           eyebrow="Showcasing PM thinking"
           title="Product Strategy & Case Studies"
-          subtitle="How I think about products I didn't build — strategy, user research, prioritization, and metrics."
+          subtitle="How I think about products I didn't build: strategy, user research, prioritization, and metrics."
           projects={caseStudies}
           className="mt-24"
         />
@@ -118,6 +131,7 @@ function Group({
 }
 
 function ProjectCard({ p, i }: { p: Project; i: number }) {
+  const [open, setOpen] = useState(!!p.featured);
   const href = p.caseStudySlug
     ? `/case-studies/${p.caseStudySlug}`
     : `/projects/${p.slug}`;
@@ -173,26 +187,50 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
             {p.oneLiner}
           </p>
 
-          <dl className="mt-6 space-y-3">
-            <Row icon={Target} label="Problem" value={p.problem} />
-            <Row icon={Wrench} label="Solution" value={p.solution} />
-            <Row icon={Lightbulb} label="Impact" value={p.impact} />
-          </dl>
+          {/* collapsible detail — CSS grid-rows collapse (no framer-motion) */}
+          <div
+            className={cn(
+              "grid transition-all duration-300 ease-out",
+              open ? "mt-6 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+            )}
+          >
+            <div className="min-h-0 overflow-hidden">
+              <dl className="space-y-3">
+                <Row icon={Target} label="Problem" value={p.problem} />
+                <Row icon={Wrench} label="Solution" value={p.solution} />
+                <Row icon={Lightbulb} label="Impact" value={p.impact} />
+              </dl>
 
-          <div className="mt-6 flex flex-wrap items-center gap-2">
-            {p.tools.slice(0, 4).map((t) => (
-              <Badge key={t}>{t}</Badge>
-            ))}
+              <div className="mt-6 flex flex-wrap items-center gap-2">
+                {p.tools.slice(0, 4).map((t) => (
+                  <Badge key={t}>{t}</Badge>
+                ))}
+              </div>
+
+              {/* what I learned */}
+              <div className="mt-5 flex items-start gap-2.5 rounded-xl border border-accent/20 bg-accent-soft/50 px-3.5 py-2.5">
+                <GraduationCap className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                <p className="text-sm">
+                  <span className="font-medium text-foreground">What I learned: </span>
+                  <span className="text-muted-foreground">{p.lesson}</span>
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* what I learned */}
-          <div className="mt-5 flex items-start gap-2.5 rounded-xl border border-accent/20 bg-accent-soft/50 px-3.5 py-2.5">
-            <GraduationCap className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-            <p className="text-sm">
-              <span className="font-medium text-foreground">What I learned — </span>
-              <span className="text-muted-foreground">{p.lesson}</span>
-            </p>
-          </div>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:opacity-80"
+          >
+            {open ? "Show less" : "View details"}
+            <ChevronDown
+              className={cn(
+                "h-4 w-4 transition-transform duration-300",
+                open && "rotate-180"
+              )}
+            />
+          </button>
         </div>
       </div>
     </div>

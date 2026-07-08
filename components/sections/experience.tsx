@@ -52,7 +52,7 @@ export function Experience() {
         <SectionHeading
           eyebrow="Professional Journey"
           title="One bank. Four years. Compounding scope."
-          description="Four years at ICICI Bank — growing from a critical business problem to owning enterprise-scale platforms."
+          description="Four years at ICICI Bank, growing from a critical business problem to owning enterprise-scale platforms."
         />
 
         <div ref={railRef} className="relative mt-16">
@@ -166,6 +166,7 @@ function HighlightStrip({ text }: { text: string }) {
 }
 
 function ActiveCard({ entry }: { entry: JourneyEntry }) {
+  const [open, setOpen] = useState(!!entry.current);
   return (
     <div className="relative overflow-hidden rounded-3xl border border-accent/30 bg-card p-6 shadow-xl shadow-accent/5 transition-all duration-300 hover:-translate-y-0.5 sm:p-8">
       <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/10 blur-3xl" />
@@ -176,14 +177,109 @@ function ActiveCard({ entry }: { entry: JourneyEntry }) {
         </h3>
         <ScopeScale entry={entry} />
 
-        <div className="mt-5 space-y-3 leading-relaxed text-muted-foreground">
+        <CollapseBody open={open}>
+          <div className="mt-5 space-y-3 leading-relaxed text-muted-foreground">
+            {entry.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+
+          {entry.metrics && (
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {entry.metrics.map((m) => (
+                <div
+                  key={m.label}
+                  className="rounded-2xl border border-border bg-background-subtle p-4 transition-colors hover:border-accent/40"
+                >
+                  <div className="text-lg font-semibold tracking-tight text-foreground">
+                    {m.label}
+                  </div>
+                  <div className="mt-1 text-xs leading-snug text-muted-foreground">
+                    {m.sub}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <HighlightStrip text={entry.highlight} />
+        </CollapseBody>
+
+        <CollapseToggle open={open} onClick={() => setOpen((v) => !v)} />
+      </div>
+    </div>
+  );
+}
+
+/** Height-animated collapsible region shared by the experience cards. */
+function CollapseBody({
+  open,
+  children,
+}: {
+  open: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <AnimatePresence initial={false}>
+      {open && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] as const }}
+          className="overflow-hidden"
+        >
+          {children}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+function CollapseToggle({
+  open,
+  onClick,
+}: {
+  open: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:opacity-80"
+    >
+      {open ? "Show less" : "View details"}
+      <ChevronDown
+        className={cn(
+          "h-4 w-4 transition-transform duration-300",
+          open && "rotate-180"
+        )}
+      />
+    </button>
+  );
+}
+
+function MilestoneCard({ entry }: { entry: JourneyEntry }) {
+  const [open, setOpen] = useState(!!entry.current);
+
+  return (
+    <div className="group rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 sm:p-6">
+      <YearBadge entry={entry} />
+      <h3 className="mt-2 text-lg font-semibold tracking-tight sm:text-xl">
+        {entry.title}
+      </h3>
+      <ScopeScale entry={entry} />
+
+      <CollapseBody open={open}>
+        <div className="mt-4 space-y-3 leading-relaxed text-muted-foreground">
           {entry.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>
 
         {entry.metrics && (
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="mt-5 grid grid-cols-3 gap-3">
             {entry.metrics.map((m) => (
               <div
                 key={m.label}
@@ -200,98 +296,30 @@ function ActiveCard({ entry }: { entry: JourneyEntry }) {
           </div>
         )}
 
-        <HighlightStrip text={entry.highlight} />
-      </div>
-    </div>
-  );
-}
-
-function MilestoneCard({ entry }: { entry: JourneyEntry }) {
-  const [open, setOpen] = useState(false);
-  const [first, ...rest] = entry.paragraphs;
-
-  return (
-    <div className="group rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 sm:p-6">
-      <YearBadge entry={entry} />
-      <h3 className="mt-2 text-lg font-semibold tracking-tight sm:text-xl">
-        {entry.title}
-      </h3>
-      <ScopeScale entry={entry} />
-
-      <p className="mt-4 leading-relaxed text-muted-foreground">{first}</p>
-
-      {entry.metrics && (
-        <div className="mt-5 grid grid-cols-3 gap-3">
-          {entry.metrics.map((m) => (
-            <div
-              key={m.label}
-              className="rounded-2xl border border-border bg-background-subtle p-4 transition-colors hover:border-accent/40"
-            >
-              <div className="text-lg font-semibold tracking-tight text-foreground">
-                {m.label}
-              </div>
-              <div className="mt-1 text-xs leading-snug text-muted-foreground">
-                {m.sub}
-              </div>
+        {entry.details && (
+          <div className="mt-4">
+            {entry.detailsLabel && (
+              <span className="text-xs font-medium uppercase tracking-wide text-muted">
+                {entry.detailsLabel}
+              </span>
+            )}
+            <div className="mt-2 flex flex-wrap gap-2">
+              {entry.details.map((d) => (
+                <span
+                  key={d}
+                  className="rounded-full border border-border bg-background-subtle px-3 py-1 text-xs text-foreground/80"
+                >
+                  {d}
+                </span>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
-
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] as const }}
-            className="overflow-hidden"
-          >
-            {rest.map((p, i) => (
-              <p key={i} className="mt-3 leading-relaxed text-muted-foreground">
-                {p}
-              </p>
-            ))}
-            {entry.details && (
-              <div className="mt-4">
-                {entry.detailsLabel && (
-                  <span className="text-xs font-medium uppercase tracking-wide text-muted">
-                    {entry.detailsLabel}
-                  </span>
-                )}
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {entry.details.map((d) => (
-                    <span
-                      key={d}
-                      className="rounded-full border border-border bg-background-subtle px-3 py-1 text-xs text-foreground/80"
-                    >
-                      {d}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
 
-      <HighlightStrip text={entry.highlight} />
+        <HighlightStrip text={entry.highlight} />
+      </CollapseBody>
 
-      {(rest.length > 0 || entry.details) && (
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:opacity-80"
-        >
-          {open ? "Show less" : "View details"}
-          <ChevronDown
-            className={cn(
-              "h-4 w-4 transition-transform duration-300",
-              open && "rotate-180"
-            )}
-          />
-        </button>
-      )}
+      <CollapseToggle open={open} onClick={() => setOpen((v) => !v)} />
     </div>
   );
 }

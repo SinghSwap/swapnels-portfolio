@@ -34,9 +34,9 @@ export async function generateMetadata({
   const cs = caseStudies.find((c) => c.slug === slug);
   if (!cs) return {};
   return {
-    title: `${cs.title} — Case Study`,
+    title: `${cs.title}, Case Study`,
     description: cs.summary,
-    openGraph: { title: `${cs.title} — Case Study`, description: cs.summary },
+    openGraph: { title: `${cs.title}, Case Study`, description: cs.summary },
   };
 }
 

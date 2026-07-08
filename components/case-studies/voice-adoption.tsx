@@ -373,7 +373,7 @@ export function VoiceAdoption() {
           <Reveal delay={2}>
             <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
               How would you increase voice-input adoption on the ChatGPT mobile
-              app? A self-directed product case study — from market opportunity
+              app? A self-directed product case study, from market opportunity
               to a shippable, privacy-first solution.
             </p>
           </Reveal>
@@ -405,7 +405,7 @@ export function VoiceAdoption() {
         <Section n="01" icon={Globe} title="The Opportunity">
           <p>
             India just overtook the US as ChatGPT&apos;s largest monthly-active
-            market — and its growth is overwhelmingly <B>vernacular</B>. Typing in
+            market, and its growth is overwhelmingly <B>vernacular</B>. Typing in
             regional languages is slow and unnatural; <B>voice is the obvious
             unlock</B>, but adoption inside ChatGPT lags.
           </p>
@@ -419,7 +419,7 @@ export function VoiceAdoption() {
           />
           <p className="text-sm">
             Hindi is already the 2nd most-used language on Google Assistant, and
-            voice-search adoption is <B>higher in Tier-2/3 cities than metros</B> —
+            voice-search adoption is <B>higher in Tier-2/3 cities than metros</B>,
             speaking beats typing when the keyboard isn&apos;t in your language.
           </p>
         </Section>
@@ -428,19 +428,19 @@ export function VoiceAdoption() {
         <Section n="02" icon={TriangleAlert} title="Why Adoption Is Hard">
           <CardGrid
             items={[
-              ["Linguistic diversity", "22 official languages and 1,600+ dialects — the hardest constraint for any voice model."],
+              ["Linguistic diversity", "22 official languages and 1,600+ dialects, the hardest constraint for any voice model."],
               ["Code-switching (Hinglish)", "~400M Indians mix Hindi & English daily; models still parse mixed inputs poorly."],
-              ["Digital literacy", "Only ~25% of rural India is digitally literate — availability ≠ usability."],
+              ["Digital literacy", "Only ~25% of rural India is digitally literate, availability ≠ usability."],
               ["Eavesdropping fears", "Users worry mics are “always listening” (~1.4 mis-activations / 10k words)."],
             ]}
           />
         </Section>
 
         {/* 3 UX teardown */}
-        <Section n="03" icon={Crosshair} title="UX Teardown — ChatGPT vs. Voice-First Apps">
+        <Section n="03" icon={Crosshair} title="UX Teardown, ChatGPT vs. Voice-First Apps">
           <p>
             ChatGPT&apos;s speech-to-text is actually <B>more capable</B> than
-            Alexa or Google Assistant — it handles Hindi, Telugu, Tulu and more.
+            Alexa or Google Assistant, it handles Hindi, Telugu, Tulu and more.
             The problem is positioning: it doesn&apos;t feel voice-first, and users
             don&apos;t know what it can do.
           </p>
@@ -448,7 +448,7 @@ export function VoiceAdoption() {
             headers={["", "Google Assistant", "Alexa", "ChatGPT"]}
             rows={[
               ["Wake word", "“Ok Google”", "“Hey Alexa”", "None"],
-              ["Voice-led in-app flow", "Yes", "Yes (voice-only)", "No — feels text-first"],
+              ["Voice-led in-app flow", "Yes", "Yes (voice-only)", "No, feels text-first"],
               ["Multilingual dictation", "Strong", "Limited", "Strong, but hidden from users"],
               ["Input clarity", "Clear", "Voice only", "Two mic buttons (dictation vs voice mode) confuse users"],
             ]}
@@ -479,14 +479,14 @@ export function VoiceAdoption() {
             ]}
           />
           <p className="text-sm">
-            ~95% of this cohort are Hindi/regional speakers — and{" "}
+            ~95% of this cohort are Hindi/regional speakers, and{" "}
             <B>every user who reported transcription errors was a regional-language
             speaker.</B>
           </p>
         </Section>
 
         {/* 5 Research */}
-        <Section n="05" icon={BadgeCheck} title="User Research — Why They Don't">
+        <Section n="05" icon={BadgeCheck} title="User Research, Why They Don't">
           <p>
             A 75-person survey plus interviews. Voice is{" "}
             <B>3–4× faster than typing</B>, yet four barriers keep this cohort on
@@ -496,7 +496,7 @@ export function VoiceAdoption() {
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {[
               ["39.4%", "Privacy concerns", "Fear that voice data is stored, used for training, or misused."],
-              ["21.2%", "Accuracy issues", "Transcription errors — concentrated among regional/accented speakers."],
+              ["21.2%", "Accuracy issues", "Transcription errors, concentrated among regional/accented speakers."],
               ["21.2%", "Public discomfort", "Feels awkward speaking to an AI in public."],
               ["12.1%", "Unaware", "Don't know voice input exists, or that it's multilingual."],
             ].map(([pct, t, d]) => (
@@ -514,7 +514,7 @@ export function VoiceAdoption() {
           </div>
           <p className="text-xs text-muted">
             Source: survey of the 25–34 cohort (plus 6.1% other). Privacy is the
-            clear lead barrier — and the one I scoped the solution around.
+            clear lead barrier, and the one I scoped the solution around.
           </p>
         </Section>
 
@@ -523,7 +523,7 @@ export function VoiceAdoption() {
           <Callout variant="accent">
             <p>
               <B>Working professionals (25–34) in urban India</B> use ChatGPT
-              frequently but <B>prefer typing over voice</B> — driven by privacy
+              frequently but <B>prefer typing over voice</B>, driven by privacy
               concerns, transcription issues, social discomfort, and an awareness
               gap.
             </p>
@@ -532,7 +532,7 @@ export function VoiceAdoption() {
             <div className="rounded-2xl border border-border bg-card p-5">
               <h3 className="font-semibold text-foreground">Value to users</h3>
               <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
-                <li>Convenience & speed — capture thoughts hands-free.</li>
+                <li>Convenience & speed, capture thoughts hands-free.</li>
                 <li>Less typing fatigue while multitasking or commuting.</li>
                 <li>Accessibility for mobility/visual challenges.</li>
                 <li>Confidence that voice data is private.</li>
@@ -594,17 +594,17 @@ export function VoiceAdoption() {
             <p className="text-sm">
               <B>Validation:</B> ~40% of this segment avoid ChatGPT voice over
               privacy; they&apos;re tech-savvy, English-comfortable, and ~60M
-              strong — a focused, winnable beachhead.
+              strong, a focused, winnable beachhead.
             </p>
           </Callout>
         </Section>
 
         {/* 8 Solution + wireframes */}
-        <Section n="08" icon={ShieldCheck} title="The Solution — Privacy Mode">
+        <Section n="08" icon={ShieldCheck} title="The Solution, Privacy Mode">
           <p>
             A dedicated <B>Privacy Mode</B>: speech-to-text runs{" "}
             <B>on-device</B>. These sessions don&apos;t contribute to model
-            training and store no memories — directly dissolving the #1 barrier.
+            training and store no memories, directly dissolving the #1 barrier.
             It&apos;s surfaced from the home screen to also close the awareness gap.
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -613,7 +613,7 @@ export function VoiceAdoption() {
                 <ModeSelectScreen />
               </Phone>
               <figcaption className="mt-3 text-center text-xs text-muted">
-                Privacy Mode surfaced right at the input — closing the awareness gap
+                Privacy Mode surfaced right at the input, closing the awareness gap
               </figcaption>
             </figure>
             <figure className="rounded-2xl border border-border bg-background-subtle p-5">
@@ -621,7 +621,7 @@ export function VoiceAdoption() {
                 <PrivacyIntroScreen />
               </Phone>
               <figcaption className="mt-3 text-center text-xs text-muted">
-                The intro card — on-device, no memories, no training
+                The intro card, on-device, no memories, no training
               </figcaption>
             </figure>
           </div>
@@ -651,8 +651,8 @@ export function VoiceAdoption() {
         {/* 9 How it works */}
         <Section n="09" icon={Workflow} title="How It Works">
           <p>
-            A single toggle forks the audio path — on-device for Privacy Mode,
-            cloud otherwise — with a graceful fallback when a device can&apos;t
+            A single toggle forks the audio path, on-device for Privacy Mode,
+            cloud otherwise, with a graceful fallback when a device can&apos;t
             support native speech-to-text.
           </p>
           <figure className="rounded-2xl border border-border bg-background-subtle p-4">
@@ -664,7 +664,7 @@ export function VoiceAdoption() {
               className="h-auto w-full rounded-xl"
             />
             <figcaption className="mt-3 text-center text-xs text-muted">
-              System diagram — the privacy toggle routes audio to native STT or cloud
+              System diagram, the privacy toggle routes audio to native STT or cloud
             </figcaption>
           </figure>
           <div className="grid gap-4 sm:grid-cols-3">
@@ -688,8 +688,8 @@ export function VoiceAdoption() {
             rows={[
               [<B key="n">North Star</B>, "% sessions with voice input", "The core adoption rate this whole effort moves"],
               ["KPI", "% Privacy Mode transcriptions", "Whether the new feature is actually used"],
-              ["Non-functional", "Error rate — % successful voice sessions", "Reliability of the voice path"],
-              ["Non-functional", "Accuracy — cloud transcriptions with no manual edits", "Quality without correction friction"],
+              ["Non-functional", "Error rate, % successful voice sessions", "Reliability of the voice path"],
+              ["Non-functional", "Accuracy, cloud transcriptions with no manual edits", "Quality without correction friction"],
               ["Launch readiness", "Fallback to cloud STT on unsupported devices", "No user is left without voice"],
             ]}
           />
@@ -698,7 +698,7 @@ export function VoiceAdoption() {
               <Quote className="h-6 w-6 shrink-0" style={{ color: ACCENT }} />
               <p className="text-lg font-medium italic text-foreground">
                 The fastest way to get India talking to ChatGPT wasn&apos;t better
-                transcription — it was removing the fear behind the mic. Make
+                transcription, it was removing the fear behind the mic. Make
                 privacy the default promise, and voice becomes the natural input.
               </p>
             </div>

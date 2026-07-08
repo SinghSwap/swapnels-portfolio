@@ -20,8 +20,8 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Product Manager & Product Builder`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} · Product Manager & Product Builder`,
+    template: `%s · ${site.name}`,
   },
   description: site.subheadline,
   keywords: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: site.url,
-    title: `${site.name} — Product Manager & Product Builder`,
+    title: `${site.name} · Product Manager & Product Builder`,
     description: site.headline,
     siteName: `${site.name} Portfolio`,
     images: [
@@ -47,13 +47,13 @@ export const metadata: Metadata = {
         url: "/og.svg",
         width: 1200,
         height: 630,
-        alt: `${site.name} — ${site.title}`,
+        alt: `${site.name} · ${site.title}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Product Manager & Product Builder`,
+    title: `${site.name} · Product Manager & Product Builder`,
     description: site.headline,
     images: ["/og.svg"],
   },
@@ -81,7 +81,7 @@ export default function RootLayout({
         />
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

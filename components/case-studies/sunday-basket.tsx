@@ -214,7 +214,7 @@ export function SundayBasket() {
               {[
                 ["Role", "Product Manager + Builder"],
                 ["Timeline", "Weekend build, iterated over weeks"],
-                ["Status", "Live — running for myself weekly"],
+                ["Status", "Live, running for myself weekly"],
                 ["North Star", "Successful weekly plans I act on"],
                 ["Technology", "AI + Make.com automation"],
                 ["Impact", "~1 hr → under 5 min of planning"],
@@ -240,7 +240,7 @@ export function SundayBasket() {
           <p>
             This started from a problem I kept hitting myself. I noticed that
             ordering groceries <B>once a week</B> was meaningfully cheaper than
-            placing several smaller orders across the week — bulk shopping just
+            placing several smaller orders across the week, bulk shopping just
             won on price. I wanted to take advantage of that.
           </p>
           <p>
@@ -252,7 +252,7 @@ export function SundayBasket() {
             </span>
           </p>
           <p>
-            After a busy work week I&apos;d often postpone it — and then defaulted
+            After a busy work week I&apos;d often postpone it, and then defaulted
             to <B>multiple grocery orders, more spend, ordering food online,
             impulse purchases, and wasted ingredients.</B> Existing meal-planning
             apps didn&apos;t fix this for me: they still expected me to sit down
@@ -262,7 +262,7 @@ export function SundayBasket() {
             <p>
               I realized the biggest problem wasn&apos;t grocery shopping. It was{" "}
               <B>the planning effort required before shopping.</B> So I decided
-              to build something to remove that effort — for myself.
+              to build something to remove that effort, for myself.
             </p>
           </Callout>
         </Section>
@@ -277,7 +277,7 @@ export function SundayBasket() {
             {[
               ["Decision fatigue", "Deciding 21 meals from a blank slate, every week, on top of a full work week."],
               ["Planning overhead", "Translating vague meal ideas into an actual, complete shopping list by hand."],
-              ["Cost optimization", "Bulk weekly orders are cheaper — but only if the plan exists to support them."],
+              ["Cost optimization", "Bulk weekly orders are cheaper, but only if the plan exists to support them."],
               ["Food waste", "Buying ingredients that don't overlap across meals, then watching them spoil."],
               ["Repeated grocery orders", "Skipping planning → multiple mid-week orders, delivery fees, and impulse buys."],
             ].map(([t, d]) => (
@@ -295,7 +295,7 @@ export function SundayBasket() {
         {/* Assumptions & validation */}
         <Section n="03" icon={FlaskConical} title="Assumptions & Validation">
           <p>
-            I didn&apos;t run formal research — this was a problem I lived. But I
+            I didn&apos;t run formal research, this was a problem I lived. But I
             was deliberate about separating <B>what I observed</B> from{" "}
             <B>what I&apos;m assuming</B> is true more broadly.
           </p>
@@ -306,7 +306,7 @@ export function SundayBasket() {
                 Personal observation (validated for me)
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                <li>The planning hour was the real blocker — not shopping itself.</li>
+                <li>The planning hour was the real blocker, not shopping itself.</li>
                 <li>
                   When I skipped it, I reliably spent more and wasted more.
                 </li>
@@ -342,7 +342,7 @@ export function SundayBasket() {
           </div>
           <p className="text-sm">
             Before building this into a commercial product, those right-hand
-            assumptions are exactly what I&apos;d test first — with real users,
+            assumptions are exactly what I&apos;d test first, with real users,
             not just my own experience.
           </p>
         </Section>
@@ -352,7 +352,7 @@ export function SundayBasket() {
           <Callout variant="accent">
             <p>
               The effort of planning a week of meals and the matching grocery
-              list — roughly an hour of decision-making — is high enough that I
+              list, roughly an hour of decision-making, is high enough that I
               postpone it, which pushes me into{" "}
               <B>frequent, more expensive mid-week orders, impulse spending, and
               food waste</B>, and erases the savings that once-a-week bulk
@@ -388,8 +388,8 @@ export function SundayBasket() {
               ["Reduce cognitive load", "The output is a decision, not a dashboard to operate."],
               ["Automate repetitive work", "If it happens every week, it shouldn't need me to trigger it."],
               ["Reuse ingredients", "Plan meals that share ingredients to cut cost and waste."],
-              ["Minimize waste", "Buy what the plan actually uses — nothing speculative."],
-              ["Keep setup simple", "No app to install, no new habit — it comes to my inbox."],
+              ["Minimize waste", "Buy what the plan actually uses, nothing speculative."],
+              ["Keep setup simple", "No app to install, no new habit, it comes to my inbox."],
               ["Deliver before shopping", "Value must land Sunday morning, before I order."],
             ].map(([t, d]) => (
               <div
@@ -407,23 +407,23 @@ export function SundayBasket() {
         <Section n="07" icon={Wrench} title="Solution Exploration">
           <p>
             I considered a few ways to solve this before committing. The deciding
-            factor wasn&apos;t capability — it was <B>time-to-value vs. ongoing
+            factor wasn&apos;t capability, it was <B>time-to-value vs. ongoing
             effort</B> for a tool of one.
           </p>
           <Table
             emphasizeFirst={false}
             headers={["Option", "Effort to build", "Ongoing effort", "Why not / why"]}
             rows={[
-              ["Spreadsheet template", "Low", "High — I still do the deciding", "Keeps the exact work I wanted to remove."],
-              ["Existing meal-planning app", "None", "Medium — manual, generic", "Still expects me to plan; ignores my reuse/cost goals."],
+              ["Spreadsheet template", "Low", "High, I still do the deciding", "Keeps the exact work I wanted to remove."],
+              ["Existing meal-planning app", "None", "Medium, manual, generic", "Still expects me to plan; ignores my reuse/cost goals."],
               ["Custom-coded app", "High", "Medium", "Overkill for one user; slow to first value."],
-              [<B key="c">AI + no-code automation</B>, <B key="e">Low</B>, <B key="o">Near-zero</B>, <B key="w">Chosen — fastest path to a hands-off result.</B>],
+              [<B key="c">AI + no-code automation</B>, <B key="e">Low</B>, <B key="o">Near-zero</B>, <B key="w">Chosen, fastest path to a hands-off result.</B>],
             ]}
           />
           <Callout variant="accent">
             <p className="text-sm">
               The MVP I chose does the <B>deciding and the assembling</B> for me
-              and delivers a finished plan — which is the part I actually wanted
+              and delivers a finished plan, which is the part I actually wanted
               gone.
             </p>
           </Callout>
@@ -442,7 +442,7 @@ export function SundayBasket() {
                 <li>Ingredient-reuse optimization across meals.</li>
                 <li>One consolidated, de-duplicated grocery list.</li>
                 <li>Grouping into shopping categories + rough quantities.</li>
-                <li>Automatic Sunday email — zero manual trigger.</li>
+                <li>Automatic Sunday email, zero manual trigger.</li>
               </ul>
             </div>
             <div className="rounded-2xl border border-border bg-card p-5">
@@ -451,11 +451,11 @@ export function SundayBasket() {
                 Intentionally excluded
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                <li>Pantry tracking / inventory sync — too much upkeep.</li>
-                <li>Nutrition/macro optimization — not my core job here.</li>
-                <li>A UI or app — the email is the product.</li>
-                <li>Direct ordering integration — out of MVP scope.</li>
-                <li>Multi-user accounts — it&apos;s a tool of one.</li>
+                <li>Pantry tracking / inventory sync, too much upkeep.</li>
+                <li>Nutrition/macro optimization, not my core job here.</li>
+                <li>A UI or app, the email is the product.</li>
+                <li>Direct ordering integration, out of MVP scope.</li>
+                <li>Multi-user accounts, it&apos;s a tool of one.</li>
               </ul>
             </div>
           </div>
@@ -468,7 +468,7 @@ export function SundayBasket() {
 
         {/* User flow */}
         <Section n="09" icon={Route} title="User Flow">
-          <p className="text-sm">From a scheduled trigger to a plan in my inbox — no input from me:</p>
+          <p className="text-sm">From a scheduled trigger to a plan in my inbox, no input from me:</p>
           <Diagram
             steps={[
               "Sunday 8am trigger",
@@ -491,15 +491,15 @@ export function SundayBasket() {
           <div className="rounded-2xl border border-border bg-card p-5 text-sm">
             <ol className="space-y-2 text-muted-foreground">
               <li>
-                <B>1. Weekly menu</B> — the 7 days × 3 meals, scannable at a
+                <B>1. Weekly menu</B>, the 7 days × 3 meals, scannable at a
                 glance.
               </li>
               <li>
-                <B>2. Consolidated grocery list</B> — grouped by shopping
+                <B>2. Consolidated grocery list</B>, grouped by shopping
                 category (produce, dairy, staples…).
               </li>
               <li>
-                <B>3. Quantities</B> — rough amounts inline beside each item.
+                <B>3. Quantities</B>, rough amounts inline beside each item.
               </li>
             </ol>
           </div>
@@ -509,10 +509,10 @@ export function SundayBasket() {
         <Section n="11" icon={Boxes} title="Feature Deep Dive">
           <div className="grid gap-4">
             {[
-              ["Ingredient-reuse optimization", "Plans meals that share ingredients across the week.", "Directly attacks both cost and waste — the same purchase serves multiple meals.", "Can nudge variety down; I cap repetition in the prompt to keep meals interesting."],
-              ["Consolidated, de-duplicated list", "Merges every meal's needs into one clean list, removing duplicates.", "This is the manual step I hated most — it's now free and error-resistant.", "Merging hides which meal an item is for; acceptable for a shopping list."],
+              ["Ingredient-reuse optimization", "Plans meals that share ingredients across the week.", "Directly attacks both cost and waste, the same purchase serves multiple meals.", "Can nudge variety down; I cap repetition in the prompt to keep meals interesting."],
+              ["Consolidated, de-duplicated list", "Merges every meal's needs into one clean list, removing duplicates.", "This is the manual step I hated most, it's now free and error-resistant.", "Merging hides which meal an item is for; acceptable for a shopping list."],
               ["Category grouping + quantities", "Sorts items into shopping sections with rough amounts.", "Makes the actual ordering fast and reduces forgotten items.", "Quantity estimates are approximate; I treat them as a sensible default, not gospel."],
-              ["Scheduled email delivery", "Sends the finished plan every Sunday morning, automatically.", "Value arrives before I shop, with zero effort to trigger — the habit runs itself.", "Fixed timing trades off on-demand flexibility; fine for a weekly rhythm."],
+              ["Scheduled email delivery", "Sends the finished plan every Sunday morning, automatically.", "Value arrives before I shop, with zero effort to trigger, the habit runs itself.", "Fixed timing trades off on-demand flexibility; fine for a weekly rhythm."],
             ].map(([t, problem, why, tradeoff]) => (
               <div
                 key={t}
@@ -540,7 +540,7 @@ export function SundayBasket() {
 
         {/* System architecture */}
         <Section n="12" icon={Boxes} title="System Architecture">
-          <p className="text-sm">A small, hands-off pipeline — scheduler in, email out:</p>
+          <p className="text-sm">A small, hands-off pipeline, scheduler in, email out:</p>
           <Diagram
             steps={[
               "Scheduler (weekly cron)",
@@ -572,7 +572,7 @@ export function SundayBasket() {
           />
           <p className="text-sm">
             The interesting engineering is the <B>prompt</B>: it&apos;s where the
-            product rules live — ingredient reuse, variety limits, and the
+            product rules live, ingredient reuse, variety limits, and the
             output shape that makes the list buyable.
           </p>
         </Section>
@@ -582,7 +582,7 @@ export function SundayBasket() {
           <Callout variant="accent">
             <p>
               <B>North Star (personal):</B> the number of weekly plans I actually
-              act on — generated <em>and</em> shopped from.
+              act on, generated <em>and</em> shopped from.
             </p>
           </Callout>
           <div className="grid gap-4 sm:grid-cols-3">
@@ -612,7 +612,7 @@ export function SundayBasket() {
           </div>
           <p className="text-sm">
             Reduction in <B>decision fatigue</B> is the qualitative outcome I
-            care about most — harder to measure, but the reason I built this.
+            care about most, harder to measure, but the reason I built this.
           </p>
         </Section>
 
@@ -620,10 +620,10 @@ export function SundayBasket() {
         <Section n="15" icon={Lightbulb} title="Reflection">
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              ["What worked well", "Putting the output in email — no new app, no new habit. The plan just shows up and I act on it."],
+              ["What worked well", "Putting the output in email, no new app, no new habit. The plan just shows up and I act on it."],
               ["What surprised me", "How much of the value was emotional, not financial. Removing the decision mattered more than the savings."],
               ["What didn't work", "Early plans were repetitive and occasionally impractical; the prompt needed real iteration to feel usable."],
-              ["What assumptions changed", "I assumed I needed an app. I didn't — the smallest possible surface (a scheduled email) was enough."],
+              ["What assumptions changed", "I assumed I needed an app. I didn't, the smallest possible surface (a scheduled email) was enough."],
             ].map(([t, d]) => (
               <div
                 key={t}
@@ -636,7 +636,7 @@ export function SundayBasket() {
           </div>
         </Section>
 
-        {/* If I continued — clearly separated hypothetical */}
+        {/* If I continued, clearly separated hypothetical */}
         <Reveal>
           <section className="scroll-mt-28">
             <div
@@ -659,7 +659,7 @@ export function SundayBasket() {
                 </h2>
               </div>
               <p className="text-sm italic text-muted">
-                Hypothetical — clearly separate from the personal project above.
+                Hypothetical, clearly separate from the personal project above.
                 This is how I&apos;d think about it as a PM, not a claim of what
                 it is today.
               </p>
@@ -667,7 +667,7 @@ export function SundayBasket() {
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {[
                   ["Target audience", "Busy dual-income households and young professionals who want the savings of weekly bulk shopping without the planning tax."],
-                  ["Market opportunity", "Sits between recipe apps and grocery delivery — the under-served 'decide + assemble' step rather than browse or deliver."],
+                  ["Market opportunity", "Sits between recipe apps and grocery delivery, the under-served 'decide + assemble' step rather than browse or deliver."],
                   ["Competitive landscape", "Meal-planning apps (Mealime, Whisk), grocery platforms' own lists, and generic AI chat. None auto-deliver a reuse-optimized, buyable plan unprompted."],
                   ["Monetization", "Freemium weekly plan; paid tier for grocery-cart hand-off, pantry awareness, and dietary profiles; potential retailer affiliate on the list."],
                   ["Future roadmap", "Pantry-aware lists → dietary/diet profiles → one-tap order hand-off → budget targets → feedback loop that learns the meals I keep."],
@@ -683,9 +683,9 @@ export function SundayBasket() {
                 ))}
               </div>
               <p className="mt-5 text-sm text-muted-foreground">
-                <B>Product strategy:</B> win the narrow, painful job — &ldquo;give
+                <B>Product strategy:</B> win the narrow, painful job, &ldquo;give
                 me a plan I&apos;ll actually cook and a list I&apos;ll actually
-                buy&rdquo; — before expanding. Trust in the plan is the wedge;
+                buy&rdquo;, before expanding. Trust in the plan is the wedge;
                 grocery-cart hand-off is where it becomes sticky.
               </p>
             </div>
@@ -697,10 +697,10 @@ export function SundayBasket() {
           <div className="grid gap-3 sm:grid-cols-2">
             {[
               ["Problem framing", "The obvious problem (shopping) wasn't the real one (planning). Reframing unlocked a far cheaper solution."],
-              ["MVP thinking", "The smallest viable surface — a scheduled email — beat the app I assumed I needed."],
+              ["MVP thinking", "The smallest viable surface, a scheduled email, beat the app I assumed I needed."],
               ["Prioritization & trade-offs", "Cutting pantry sync, nutrition, and a UI kept the build focused on the one job that mattered."],
               ["Systems thinking", "Designing the pipeline (schedule → AI → transform → email) mattered more than any single feature."],
-              ["Customer empathy", "Being my own user collapsed the feedback loop — I felt every rough edge immediately."],
+              ["Customer empathy", "Being my own user collapsed the feedback loop, I felt every rough edge immediately."],
               ["Iteration & metrics", "Defining success as 'plans I act on' (not 'plans generated') kept me honest about real value."],
             ].map(([t, d]) => (
               <div
@@ -716,7 +716,7 @@ export function SundayBasket() {
             <div className="flex gap-3">
               <Quote className="h-6 w-6 shrink-0" style={{ color: ACCENT }} />
               <p className="text-lg font-medium italic text-foreground">
-                The win wasn&apos;t automating grocery shopping — it was noticing
+                The win wasn&apos;t automating grocery shopping, it was noticing
                 that the real product was removing a decision. Build for the job,
                 not the obvious task.
               </p>

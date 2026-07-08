@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Download } from "lucide-react";
 import { navLinks, site } from "@/lib/data";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ButtonLink } from "@/components/ui/button";
@@ -55,6 +55,15 @@ export function Nav() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <ButtonLink
+            href={site.resumeUrl}
+            external
+            size="sm"
+            variant="secondary"
+            className="hidden sm:inline-flex"
+          >
+            <Download className="h-4 w-4" /> Resume
+          </ButtonLink>
+          <ButtonLink
             href={site.links.linkedin}
             external
             size="sm"
@@ -92,6 +101,15 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
+            <ButtonLink
+              href={site.resumeUrl}
+              external
+              variant="secondary"
+              className="mt-1 w-full"
+              size="sm"
+            >
+              <Download className="h-4 w-4" /> Download Resume
+            </ButtonLink>
             <ButtonLink
               href={site.links.linkedin}
               external
