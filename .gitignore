@@ -42,4 +42,4 @@ next-env.d.ts
 
 # Local dev + working docs (not for the public repo)
 .claude/
-projects-content-for-review.md
+*-content-for-review.md
