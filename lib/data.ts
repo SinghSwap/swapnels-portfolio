@@ -14,7 +14,7 @@ export const site = {
   resumeUrl: "/resume.pdf",
   links: {
     linkedin: "https://www.linkedin.com/in/pm-swapnilsingh",
-    github: "https://github.com/swapnelsingh",
+    github: "https://github.com/SinghSwap",
     email: "mailto:reachtoswapnelsingh@gmail.com",
   },
   url: "https://swapnelsingh.com",
