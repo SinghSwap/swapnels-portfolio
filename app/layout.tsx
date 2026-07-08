@@ -74,6 +74,11 @@ export default function RootLayout({
       className={`${sans.variable} ${mono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
