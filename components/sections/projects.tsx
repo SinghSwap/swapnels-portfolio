@@ -79,7 +79,6 @@ export function Projects() {
 
         {/* Group 2 — product thinking */}
         <Group
-          eyebrow="Showcasing PM thinking"
           title="Product Strategy & Case Studies"
           subtitle="How I think about products I didn't build: strategy, user research, prioritization, and metrics."
           projects={caseStudies}
