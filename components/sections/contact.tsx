@@ -1,5 +1,5 @@
 import { Download, Mail } from "lucide-react";
-import { GithubIcon as Github, LinkedinIcon as Linkedin } from "@/components/ui/brand-icons";
+import { LinkedinIcon as Linkedin } from "@/components/ui/brand-icons";
 import { site } from "@/lib/data";
 import { Reveal } from "@/components/ui/reveal";
 import { ButtonLink } from "@/components/ui/button";
@@ -7,7 +7,6 @@ import { ButtonLink } from "@/components/ui/button";
 const channels = [
   { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: site.links.linkedin, external: true },
   { icon: Mail, label: "Email", value: site.email, href: site.links.email, external: false },
-  { icon: Github, label: "GitHub", value: "See the code", href: site.links.github, external: true },
   { icon: Download, label: "Resume", value: "Download PDF", href: site.resumeUrl, external: true },
 ];
 

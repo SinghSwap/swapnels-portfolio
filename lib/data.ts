@@ -5,16 +5,15 @@
 
 export const site = {
   name: "Swapnel Singh",
-  title: "Product Manager | Product Builder",
-  headline: "Enterprise products by profession. AI products by habit.",
+  title: "Technical Product Owner | Product Manager",
+  headline: "Enterprise platform products by profession. AI products by habit.",
   subheadline:
-    "I build enterprise HR products at ICICI Bank. Outside work, I build AI products and automations that solve everyday problems.",
+    "I own enterprise platform products at ICICI Bank, from requirements and backlog to release. Outside work, I build AI products and automations that solve everyday problems.",
   email: "reachtoswapnelsingh@gmail.com",
   location: "India",
   resumeUrl: "/resume.pdf",
   links: {
     linkedin: "https://www.linkedin.com/in/pm-swapnilsingh",
-    github: "https://github.com/SinghSwap",
     email: "mailto:reachtoswapnelsingh@gmail.com",
   },
   url: "https://swapnels-portfolio.vercel.app",
@@ -28,20 +27,20 @@ export const stats = [
 ];
 
 export const about = {
-  subtitle: "Enterprise product experience, sharpened by building my own.",
+  subtitle: "Enterprise platform ownership, sharpened by building my own.",
   intro:
-    "I'm a product builder with 3+ years of experience leading enterprise HR technology initiatives at ICICI Bank. I partner with business stakeholders and engineering teams to prioritize features, define requirements, improve user journeys, and drive product delivery for platforms used by thousands of employees. I'm now looking to bring that enterprise product experience to a dedicated Product Manager role, building customer-centric products with measurable business impact.",
+    "I'm a Technical Product Owner with 3+ years owning enterprise workflow and onboarding platforms at ICICI Bank. I partner with business stakeholders and engineering teams to gather requirements, translate them into user stories and prioritized backlog, drive API-based integrations, and manage delivery through UAT and release for platforms used by thousands of employees. I'm now looking to bring that enterprise platform experience to a dedicated Technical Product Owner role, delivering platform products with measurable business impact.",
   quickFacts: [
     {
       icon: "experience",
       label: "Experience",
-      value: "3+ Years in Product Delivery",
+      value: "3+ Years in Product Ownership",
     },
     { icon: "company", label: "Company", value: "ICICI Bank (Enterprise)" },
     {
       icon: "workedon",
       label: "Worked On",
-      value: "Recruitment · Onboarding · Internal HR Platforms",
+      value: "Enterprise · Onboarding · Platform Products",
     },
     {
       icon: "interests",
@@ -56,7 +55,7 @@ export const about = {
     },
   ],
   currentFocus:
-    "Building products beyond work, conducting user research, and strengthening my product thinking through real-world case studies and hands-on projects. I'm focused on applying my enterprise product experience to build customer-centric products in a product-first environment.",
+    "Building products beyond work, conducting user research, and strengthening my product thinking through real-world case studies and hands-on projects. I'm focused on applying my enterprise platform experience to deliver scalable platform products in a product-first environment.",
 };
 
 // -----------------------------------------------------------------------------
@@ -97,7 +96,7 @@ export const journey: JourneyEntry[] = [
     paragraphs: [
       "Led a product-led transformation of ICICI Bank's background-verification workflow to solve a critical timing problem: verification only began after a candidate was hired, so adverse findings surfaced months too late, creating avoidable operational and hiring-governance risk at a bank recruiting at scale.",
       "I redesigned the hiring journey so verification began at the applicant stage rather than after employee creation, assessing risk up front, reducing operational exposure, strengthening hiring governance, and surfacing issues far earlier in the recruitment lifecycle.",
-      "As the product manager, I partnered with HR, Operations, and Engineering to gather requirements, align stakeholders, redesign the workflow, and coordinate implementation end to end.",
+      "As the product owner, I partnered with business, operations, and engineering teams to gather requirements, align stakeholders, redesign the workflow, and coordinate implementation end to end.",
     ],
     detailsLabel: "Focus",
     details: [
@@ -119,7 +118,7 @@ export const journey: JourneyEntry[] = [
     scale: "~80K candidate journeys / month",
     paragraphs: [
       "Led the 0→1 build of ICICI Bank's recruitment & onboarding platform, transforming fragmented, manual pre-joining workflows into a production-ready digital experience designed for high-volume hiring across ~80K candidate journeys a month.",
-      "The work was product-first: mapping the end-to-end candidate journey, understanding how HR and operations actually ran pre-joining, and running requirement discovery with business stakeholders to define what the platform had to do. From there I prioritized the build, shaped the roadmap, and drove cross-functional execution across HR, operations, and engineering, carrying the product from a blank page to production readiness and release planning.",
+      "The work was product-first: mapping the end-to-end candidate journey, understanding how business and operations teams actually ran pre-joining, and running requirement discovery with stakeholders to define what the platform had to do. From there I prioritized the backlog, shaped the roadmap, and drove cross-functional execution across business, operations, and engineering, carrying the product from a blank page through production readiness and release planning.",
     ],
     detailsLabel: "Ownership",
     details: [
@@ -143,7 +142,7 @@ export const journey: JourneyEntry[] = [
     scope: "Recruitment & onboarding platform",
     scale: "Scaling a live product",
     paragraphs: [
-      "Led the launch and continuous improvement of the recruitment & onboarding platform, owning the candidate journey from offer to first day, for candidates, HR teams, hiring managers, and operations.",
+      "Led the launch and continuous improvement of the recruitment & onboarding platform, owning the candidate journey from offer to first day, for candidates, hiring managers, and operations teams.",
       "I set a single North Star, how many candidates are fully ready on day one, and used it to prioritize the roadmap, tracking a few leading signals across the journey to catch drop-off early and decide what to build next.",
     ],
     metrics: [
@@ -164,13 +163,13 @@ export const journey: JourneyEntry[] = [
     scope: "Enterprise employee experience platform",
     scale: "150K+ employees",
     paragraphs: [
-      "As part of ICICI Bank's digital HR transformation, fragmented employee journeys spread across multiple systems were consolidated into a unified Employee Experience Platform. The initiative simplified employee experiences, standardized HR workflows, and reduced operational overhead across the organization while supporting 150K+ employees.",
-      "I own product strategy and execution within that broader initiative, collaborating with HR, Operations, and business teams to surface workflow bottlenecks and operational needs, translating those business priorities into clear product requirements, prioritizing the roadmap against operational impact, and managing delivery through release. The platform reduced HR operational effort while helping employees complete common workflows faster.",
+      "As part of ICICI Bank's digital transformation, fragmented employee journeys spread across multiple systems were consolidated into a unified Employee Experience Platform. The initiative simplified employee experiences, standardized enterprise workflows, and reduced operational overhead across the organization while supporting 150K+ employees.",
+      "I own product strategy and execution within that broader initiative, collaborating with business, operations, and engineering teams to surface workflow bottlenecks and operational needs, translating those priorities into clear product requirements and prioritized backlog, orchestrating API-based integrations across systems, prioritizing the roadmap against operational impact, and managing delivery through UAT and release. The platform reduced operational effort while helping employees complete common workflows faster.",
     ],
     metrics: [
       { label: "150K+", sub: "Employees supported" },
-      { label: "21% fewer", sub: "HR support queries" },
-      { label: "40% faster", sub: "Common HR workflows" },
+      { label: "21% fewer", sub: "Support queries" },
+      { label: "40% faster", sub: "Common workflows" },
     ],
     detailsLabel: "Ownership",
     details: [
@@ -183,7 +182,7 @@ export const journey: JourneyEntry[] = [
       "Continuous improvement",
     ],
     highlight:
-      "Led product strategy and delivery for ICICI Bank's HR transformation, consolidating fragmented employee journeys into a unified platform serving 150K+ employees while reducing HR support queries and accelerating everyday workflows.",
+      "Led product strategy and delivery for ICICI Bank's digital transformation, consolidating fragmented employee journeys into a unified enterprise platform serving 150K+ employees while reducing support queries and accelerating everyday workflows.",
   },
 ];
 
@@ -370,7 +369,7 @@ export const productThinking: string[] = [
   "Jobs To Be Done",
   "Prioritization (RICE)",
   "User Research",
-  "Experimentation & A/B Testing",
+  "Experimentation",
   "Product Analytics",
   "Stakeholder Management",
   "API Integrations",

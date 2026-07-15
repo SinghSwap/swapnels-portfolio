@@ -69,7 +69,7 @@ export function Reveal({
   );
 }
 
-/** Staggered container — children (RevealItem) reveal in sequence. */
+/** Staggered container: children (RevealItem) reveal in sequence. */
 export function RevealGroup({
   children,
   className,

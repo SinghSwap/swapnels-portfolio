@@ -43,7 +43,7 @@ export function Hero() {
             className="rise text-balance text-5xl font-semibold tracking-tight sm:text-6xl md:text-7xl"
             style={rise(2)}
           >
-            Enterprise products by profession.
+            Enterprise platforms by profession.
             <br className="hidden sm:block" />{" "}
             <span className="text-accent">AI products by habit.</span>
           </h1>

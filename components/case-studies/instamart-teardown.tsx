@@ -209,7 +209,7 @@ export function InstamartTeardown() {
           </Reveal>
           <Reveal delay={2}>
             <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
-              A teardown of the grocery add-to-cart funnel — where a
+              A teardown of the grocery add-to-cart funnel, where a
               discount-optimized variant picker quietly leaks conversion, trust,
               and repeat demand.
             </p>
@@ -259,8 +259,8 @@ export function InstamartTeardown() {
         {/* 1 Executive Summary */}
         <Section n="01" icon={ClipboardList} title="Executive Summary">
           <p>
-            Instamart&apos;s variant-selection modal — the step between &ldquo;I
-            found potatoes&rdquo; and &ldquo;potatoes are in my cart&rdquo; — is{" "}
+            Instamart&apos;s variant-selection modal, the step between &ldquo;I
+            found potatoes&rdquo; and &ldquo;potatoes are in my cart,&rdquo; is{" "}
             <B>optimized for discount visibility and AOV, not purchase
             completion.</B>{" "}
             On the highest-frequency category in grocery (staples like
@@ -269,9 +269,9 @@ export function InstamartTeardown() {
           </p>
           <div className="grid gap-3 sm:grid-cols-3">
             {[
-              "The currently-selected option renders last (rightmost) because chips sort alphabetically — so a correct default reads as not selected.",
+              "The currently-selected option renders last (rightmost) because chips sort alphabetically, so a correct default reads as not selected.",
               "On variant switch, the system auto-selects the highest-discount pack regardless of stock, landing users on sold-out inventory.",
-              "When that pack is sold out, the only clear signal lives in a bottom-corner button a one-handed grip physically covers — while the tile still looks available.",
+              "When that pack is sold out, the only clear signal lives in a bottom-corner button a one-handed grip physically covers, while the tile still looks available.",
             ].map((t, i) => (
               <div
                 key={i}
@@ -296,12 +296,12 @@ export function InstamartTeardown() {
           <Callout variant="accent">
             <p>
               The strategic frame is not &ldquo;fix the UI.&rdquo; It&apos;s:{" "}
-              <B>the variant picker is solving the wrong objective function —
-              discount exposure — at the exact moment the user&apos;s job is
+              <B>the variant picker is solving the wrong objective function
+              (discount exposure) at the exact moment the user&apos;s job is
               &ldquo;complete my purchase.&rdquo;</B>{" "}
               <span className="mt-2 block text-sm">
                 <B>What I&apos;d ship first:</B> an availability-first default +
-                an unmissable sold-out state (paired — they&apos;re the same
+                an unmissable sold-out state (paired, because they&apos;re the same
                 revenue-protecting chain), with a near-zero-effort chip-reorder
                 riding in the same release.
               </span>
@@ -315,8 +315,8 @@ export function InstamartTeardown() {
             <p>
               Instamart&apos;s variant modal optimizes for discount/AOV signaling
               at the moment of purchase intent, introducing friction that{" "}
-              <B>suppresses add-to-cart conversion and erodes inventory trust</B>{" "}
-              — disproportionately on the highest-frequency, highest-retention
+              <B>suppresses add-to-cart conversion and erodes inventory trust</B>,
+              disproportionately on the highest-frequency, highest-retention
               category in the basket.
             </p>
           </Callout>
@@ -325,7 +325,7 @@ export function InstamartTeardown() {
             <B>the staple search (&ldquo;aloo,&rdquo; &ldquo;doodh,&rdquo;
             &ldquo;pyaaz&rdquo;) is the habit loop.</B>{" "}
             It&apos;s the query that brings users back weekly. Friction there
-            doesn&apos;t just cost one line item — it taxes the behavior that
+            doesn&apos;t just cost one line item; it taxes the behavior that
             drives frequency, and frequency is the entire q-commerce business
             model.
           </p>
@@ -341,10 +341,10 @@ export function InstamartTeardown() {
           <Table
             headers={["Stage", "What the user did", "What the system did", "Friction"]}
             rows={[
-              ["Search", "Typed “Aloo”", "Returned a dense staple grid", "—"],
+              ["Search", "Typed “Aloo”", "Returned a dense staple grid", "None"],
               ["Intent", "Tapped + on the default potato", "Opened a variant modal (not a direct add)", "Tap promised “add,” delivered “configure”"],
-              ["Orientation", "Looked for the selected type", "Showed “Potato” selected — but as the rightmost chip", "Couldn’t trust selection → explored other chips"],
-              ["Exploration", "Tapped a different type to check", "Auto-selected the highest-discount pack — sold out", "Landed on a dead end"],
+              ["Orientation", "Looked for the selected type", "Showed “Potato” selected, but as the rightmost chip", "Couldn’t trust selection → explored other chips"],
+              ["Exploration", "Tapped a different type to check", "Auto-selected the highest-discount pack (sold out)", "Landed on a dead end"],
               ["Confusion", "Saw a highlighted tile with a live price", "Sold-out state only in the bottom button (hand-occluded)", "Item looked buyable; it wasn’t"],
               ["Recovery", "Backtracked to the original type", "Restored an addable state", "Wasted taps + lost confidence"],
               ["Add", "Tapped ADD", "Item added; cart 3 → 4", "After ~10 interactions for one ₹29 staple"],
@@ -401,10 +401,10 @@ export function InstamartTeardown() {
         <Section n="06" icon={Lightbulb} title="Key Product Insights">
           <div className="grid gap-3 sm:grid-cols-2">
             {[
-              ["A correct default that looks wrong is as costly as a wrong default.", "The right potato type sat where users don’t look for a default. Selection state must be reinforced by position, not just color — users trust layout over highlight."],
+              ["A correct default that looks wrong is as costly as a wrong default.", "The right potato type sat where users don’t look for a default. Selection state must be reinforced by position, not just color; users trust layout over highlight."],
               ["Optimizing the default for discount is negative-EV when stock is ignored.", "A “best deal” the user can’t buy is a dead end. Availability is a precondition for a default to have any value at all."],
               ["Inventory accuracy and inventory communication are different products.", "The data was correct (genuinely sold out); the communication failed. In q-commerce, perceived availability drives behavior more than actual availability."],
-              ["This is the habit category, so the blast radius is retention.", "Friction on “aloo” isn’t friction on a long-tail SKU — it’s friction on the query that creates weekly frequency. The cost compounds through repeat behavior."],
+              ["This is the habit category, so the blast radius is retention.", "Friction on “aloo” isn’t friction on a long-tail SKU; it’s friction on the query that creates weekly frequency. The cost compounds through repeat behavior."],
             ].map(([t, d], i) => (
               <div
                 key={i}
@@ -439,7 +439,7 @@ export function InstamartTeardown() {
             <p>
               <B>The unifying root cause:</B> the variant modal&apos;s objective
               function is &ldquo;expose discounts / lift AOV,&rdquo; inherited
-              from merchandising — when at this funnel step the objective should
+              from merchandising, when at this funnel step the objective should
               be &ldquo;complete the purchase.&rdquo; Every symptom is a
               downstream expression of that one misaligned goal.
             </p>
@@ -449,7 +449,7 @@ export function InstamartTeardown() {
         {/* 8 Business Impact */}
         <Section n="08" icon={TrendingDown} title="Business Impact">
           <p className="text-sm italic">
-            All figures are directional, per-unit, and assumption-based —
+            All figures are directional, per-unit, and assumption-based,
             designed to be multiplied by real funnel volume once instrumented.
             Unit: <B>per 1,000 staple variant-modal opens.</B>
           </p>
@@ -483,7 +483,7 @@ export function InstamartTeardown() {
               ["Search-to-cart conversion", "↓", "Backtracking + dead-ends on the highest-volume query class."],
               ["Add-to-cart rate", "↓↓", "Users land on unbuyable defaults and abandon the line."],
               ["Checkout completion", "↓ indirect", "Smaller/incomplete carts and lost momentum."],
-              ["Revenue / GMV", "↓↓", "Loses sellable lines — an in-stock alternative existed."],
+              ["Revenue / GMV", "↓↓", "Loses sellable lines; an in-stock alternative existed."],
               ["Basket size / AOV", "↘ paradox", "The discount-max default shrinks baskets when it lands on OOS."],
               ["CSAT", "↓", "“Looks available, won’t add” reads as a broken app."],
               ["Retention / frequency", "↓↓ highest-stakes", "Erodes the weekly restock loop that powers q-commerce LTV."],
@@ -493,13 +493,13 @@ export function InstamartTeardown() {
             <p>
               <B>The headline:</B> the feature built to <B>increase</B> basket
               value (discount-max defaulting) is, in the OOS case,{" "}
-              <B>decreasing</B> it — a self-defeating optimization.
+              <B>decreasing</B> it, a self-defeating optimization.
             </p>
           </Callout>
         </Section>
 
         {/* 9 RICE */}
-        <Section n="09" icon={ListChecks} title="Prioritization — RICE">
+        <Section n="09" icon={ListChecks} title="Prioritization (RICE)">
           <p className="text-sm">
             RICE = (Reach × Impact × Confidence) ÷ Effort. Reach = affected
             events/quarter (illustrative); Impact 0.25–3; Confidence 0–100%;
@@ -519,11 +519,11 @@ export function InstamartTeardown() {
           <Callout>
             <p>
               <B>Reading the table like a PM, not a calculator:</B> RICE ranks{" "}
-              <B>C</B> highest because it&apos;s nearly free and broad — but its
+              <B>C</B> highest because it&apos;s nearly free and broad, but its
               absolute business value is low (recoverable friction, no lost
               sale). <B>A + B</B> are the only items that protect sellable GMV
               and trust. RICE measures efficiency; it doesn&apos;t measure
-              strategic value — so a cheap top-RICE item ships{" "}
+              strategic value, so a cheap top-RICE item ships{" "}
               <em>alongside</em> the strategic bet, not instead of it.
             </p>
           </Callout>
@@ -547,7 +547,7 @@ export function InstamartTeardown() {
               title="Single-Source-of-Truth Availability Display"
               addresses="addresses Obs. 3"
               rows={[
-                { label: "Design", value: "One availability state per variant drives every signal in unison — tile border, price, an on-tile “Sold out” label, and the button. OOS survives selection; surface status inline near the quantity." },
+                { label: "Design", value: "One availability state per variant drives every signal in unison: tile border, price, an on-tile “Sold out” label, and the button. OOS survives selection; surface status inline near the quantity." },
                 { label: "Benefit", value: "Instantly knows what’s buyable; rebuilds inventory trust." },
                 { label: "Metrics", value: "Time-to-comprehension; abandonment-after-OOS; CSAT on availability." },
               ]}
@@ -565,7 +565,7 @@ export function InstamartTeardown() {
             <SolutionCard
               letter="D"
               title="One-Tap Add with a Smart Default"
-              addresses="structural — collapses C + much of A"
+              addresses="structural: collapses C + much of A"
               rows={[
                 { label: "Design", value: "+ adds the smart (in-stock, relevant, last-bought) default in one tap; the modal surfaces only for genuine multi-option choices, opening with the default first." },
                 { label: "Benefit", value: "Restores the “tap = added” mental model; largest lift to add-to-cart on the habit category." },
@@ -630,7 +630,7 @@ export function InstamartTeardown() {
           />
           <p className="text-sm">
             <B>Counter-metric discipline:</B> any default change is judged on{" "}
-            <B>revenue per session</B>, not AOV in isolation — precisely to avoid
+            <B>revenue per session</B>, not AOV in isolation, precisely to avoid
             re-creating the &ldquo;optimize AOV, lose the sale&rdquo; failure.
           </p>
         </Section>
@@ -643,7 +643,7 @@ export function InstamartTeardown() {
                 AOV optimization vs. purchase completion
               </h3>
               <p className="mt-1">
-                AOV is a <em>conditional</em> metric — it only exists if the
+                AOV is a <em>conditional</em> metric; it only exists if the
                 purchase completes. Optimizing the default for discount while
                 ignoring stock multiplies basket value by a probability of zero.{" "}
                 <B>Gate on completion first (availability, clarity), then
@@ -657,7 +657,7 @@ export function InstamartTeardown() {
               </h3>
               <p className="mt-1">
                 The user at the <B>+</B> tap wants to <em>finish</em>;
-                merchandising wants to <em>show</em>. They coexist —{" "}
+                merchandising wants to <em>show</em>. They coexist:{" "}
                 <B>intent owns the moment of action; merchandising owns
                 discovery.</B> A sold-out default at the point of intent is
                 merchandising trespassing on the user&apos;s job.
@@ -669,7 +669,7 @@ export function InstamartTeardown() {
               </h3>
               <p className="mt-1">
                 Q-commerce monetizes <B>frequency</B>, not margin-per-order. A
-                recovered staple purchase isn&apos;t worth ₹40 — it&apos;s worth
+                recovered staple purchase isn&apos;t worth ₹40; it&apos;s worth
                 ₹40 × the retention it protects on a weekly-habit category.{" "}
                 <B>Optimizing for the successful purchase is optimizing for the
                 business model.</B>
@@ -683,18 +683,18 @@ export function InstamartTeardown() {
           <Callout>
             <p className="italic">
               &ldquo;If I owned Instamart&apos;s grocery purchase funnel, what
-              would I ship first — and why?&rdquo;
+              would I ship first, and why?&rdquo;
             </p>
           </Callout>
           <p>
             <B>Ship the variant modal&apos;s objective change: availability-first
             defaulting (A) + an unmissable, single-source-of-truth sold-out state
-            (B), as one release — with the chip reorder (C) riding along.</B>
+            (B), as one release, with the chip reorder (C) riding along.</B>
           </p>
           <ol className="list-decimal space-y-2 pl-5 text-sm marker:font-semibold marker:text-foreground">
             <li>
               The only intervention that recovers <em>sellable</em> revenue and
-              trust — the two things that compound in q-commerce.
+              trust, the two things that compound in q-commerce.
             </li>
             <li>
               It corrects the root cause (discount-objective at the intent step),
@@ -702,22 +702,22 @@ export function InstamartTeardown() {
             </li>
             <li>
               Cheap for its leverage: B is mostly front-end, C near-zero effort, A
-              a contained logic change — small relative to GMV-at-risk.
+              a contained logic change, small relative to GMV-at-risk.
             </li>
             <li>
-              On RICE, C scores highest — so it ships in the same release. RICE
+              On RICE, C scores highest, so it ships in the same release. RICE
               prioritizes; strategy decides. A quick win rides the strategic ship,
               it doesn&apos;t delay it.
             </li>
             <li>
-              Gate everything on <B>revenue per session</B>, not AOV — the
+              Gate everything on <B>revenue per session</B>, not AOV, the
               institutional fix for the exact mistake that created the problem.
             </li>
           </ol>
           <p className="text-sm">
             <B>Deliberately not first:</B> the full one-tap-add restructure (D).
-            Highest ceiling, but real AOV risk and 4× the effort — run as the next
-            experiment (T4) <em>after</em> the availability foundation, so results
+            Highest ceiling, but real AOV risk and 4× the effort. Run it as the
+            next experiment (T4) <em>after</em> the availability foundation, so results
             aren&apos;t confounded by users still hitting sold-out dead-ends.
           </p>
           <Callout variant="thesis">
@@ -727,7 +727,7 @@ export function InstamartTeardown() {
                 Instamart&apos;s variant picker is optimizing for the discount it
                 can show instead of the purchase it can complete. Flip that
                 objective on the highest-frequency category, and we protect the
-                exact behavior — fast, certain, repeat staple buying — that the
+                exact behavior (fast, certain, repeat staple buying) that the
                 entire quick-commerce model is built on.
               </p>
             </div>

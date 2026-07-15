@@ -36,7 +36,7 @@ const mockBySlug: Record<string, MockVariant> = {
   "chatgpt-voice-adoption": "voice",
 };
 
-// Group 1 — products I actually built and shipped.
+// Group 1: products I actually built and shipped.
 // NOTE: "pm-revision" is intentionally hidden from the live site (kept in
 // lib/data.ts so it can be restored by re-adding its slug here).
 const builtSlugs = [
@@ -44,7 +44,7 @@ const builtSlugs = [
   "ai-job-search-engine",
   "personal-finance-ai",
 ];
-// Group 2 — PM-thinking case studies & teardowns (not built).
+// Group 2: PM-thinking case studies & teardowns (not built).
 // NOTE: "instamart-variant-selection" is intentionally hidden from the live
 // site (kept in lib/data.ts so it can be restored by re-adding its slug here).
 const caseStudySlugs = [
@@ -69,7 +69,7 @@ export function Projects() {
           </span>
         </Reveal>
 
-        {/* Group 1 — built */}
+        {/* Group 1: built */}
         <Group
           title="Problems I built solutions for"
           subtitle="Products I designed, built, and shipped end-to-end outside my day job. Each one started as a problem I personally had."
@@ -77,7 +77,7 @@ export function Projects() {
           className="mt-4"
         />
 
-        {/* Group 2 — product thinking */}
+        {/* Group 2: product thinking */}
         <Group
           title="Product Strategy & Case Studies"
           subtitle="How I think about products I didn't build: strategy, user research, prioritization, and metrics."
@@ -186,7 +186,7 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
             {p.oneLiner}
           </p>
 
-          {/* collapsible detail — CSS grid-rows collapse (no framer-motion) */}
+          {/* collapsible detail: CSS grid-rows collapse (no framer-motion) */}
           <div
             className={cn(
               "grid transition-all duration-300 ease-out",

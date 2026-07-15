@@ -104,13 +104,13 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Reveal animations — CSS-driven (no framer-motion on the render path).
+   Reveal animations: CSS-driven (no framer-motion on the render path).
    Content stays fully visible without JS or when motion is reduced. The hidden
    state only applies once `.js` is set (synchronously in <head>, before paint),
    so there is no flash and no blank-until-hydrate.
 --------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: no-preference) {
-  /* On-scroll reveal — IntersectionObserver adds .is-visible */
+  /* On-scroll reveal: IntersectionObserver adds .is-visible */
   .js [data-reveal] {
     opacity: 0;
     transform: translateY(22px);
@@ -125,7 +125,7 @@ body {
     transform: none;
   }
 
-  /* On-load entrance (above the fold) — pure CSS, no JS dependency */
+  /* On-load entrance (above the fold): pure CSS, no JS dependency */
   .rise {
     opacity: 0;
     animation: rise 0.6s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
@@ -142,7 +142,7 @@ body {
     }
   }
 
-  /* Fixed nav bar — slides down from above on load */
+  /* Fixed nav bar: slides down from above on load */
   .nav-rise {
     animation: nav-rise 0.5s ease-out both;
   }
