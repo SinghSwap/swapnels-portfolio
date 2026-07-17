@@ -38,7 +38,7 @@ export function Contact() {
                 </ButtonLink>
               </div>
 
-              <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
                 {channels.map((c) => (
                   <a
                     key={c.label}
